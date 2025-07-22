@@ -6,6 +6,7 @@ import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 import ProductsTable from "./ProductsTable";
 
+
 export default function CardPage({ cart = true }) {
   return (
     <Layout childrenClasses={cart ? "pt-0 pb-0" : ""}>

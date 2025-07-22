@@ -65,16 +65,14 @@ export default function Home() {
         </ViewMoreTitle>
         <ProductsAds
           ads={[
-            `${import.meta.env.VITE_PUBLIC_URL}/assets/images/bannera-1.png`,
-            `${import.meta.env.VITE_PUBLIC_URL}/assets/images/bannera-2.png`,
+            `public/assets/images/bannera-1.png`,
+            `public/assets/images/bannera-2.png`,
           ]}
           sectionHeight="sm:h-[295px] h-full"
           className="products-ads-section mb-[60px]"
         />
         <SectionStyleOne
-          categoryBackground={`${
-            import.meta.env.VITE_PUBLIC_URL
-          }/assets/images/section-category-2.jpg`}
+          categoryBackground={`public/assets/images/section-category-2.jpg`}
           products={products.slice(4, products.length)}
           brands={brands}
           categoryTitle="Electronics"
@@ -83,7 +81,7 @@ export default function Home() {
           className="category-products mb-[60px]"
         />
         <ProductsAds
-          ads={[`${import.meta.env.VITE_PUBLIC_URL}/assets/images/bannera-3.png`]}
+          ads={[`public/assets/images/bannera-3.png`]}
           className="products-ads-section mb-[60px]"
         />
         <SectionStyleThree
@@ -94,7 +92,7 @@ export default function Home() {
         />
         <ProductsAds
           sectionHeight="164"
-          ads={[`${import.meta.env.VITE_PUBLIC_URL}assets/images/bannera-4.png`]}
+          ads={[`public/assets/images/bannera-4.png`]}
           className="products-ads-section mb-[60px]"
         />
         <SectionStyleFour

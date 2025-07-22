@@ -3,36 +3,23 @@ import Facebook from "../../../Helpers/icons/Facebook";
 import Instagram from "../../../Helpers/icons/Instagram";
 import Youtube from "../../../Helpers/icons/Youtube";
 
-export default function Footer({ type }) {
+export default function Footer() {
   return (
     <footer className="footer-section-wrapper bg-white print:hidden">
       <div className="container-x block mx-auto pt-[56px]">
         <div className="w-full flex flex-col items-center mb-[50px]">
           {/* logo area */}
           <div className="mb-[40px]">
-            {type === 3 ? (
+         
               <Link to="/">
                 <img
                   width="152"
                   height="36"
-                  src={`${
-                    import.meta.env.VITE_PUBLIC_URL
-                  }/assets/images/logo-3.svg`}
+                  src={`public/assets/images/logo.svg`}
                   alt="logo"
                 />
               </Link>
-            ) : (
-              <Link to="/">
-                <img
-                  width="152"
-                  height="36"
-                  src={`${
-                    import.meta.env.VITE_PUBLIC_URL
-                  }/assets/images/logo.svg`}
-                  alt="logo"
-                />
-              </Link>
-            )}
+          
           </div>
           <div className="w-full h-[1px] bg-[#E9E9E9]"></div>
         </div>
@@ -174,9 +161,7 @@ export default function Footer({ type }) {
               <img
                 width="318"
                 height="28"
-                src={`${
-                  import.meta.env.VITE_PUBLIC_URL
-                }/assets/images/payment-getways.png`}
+                src={`public/assets/images/payment-getways.png`}
                 alt="payment-getways"
               />
             </a>

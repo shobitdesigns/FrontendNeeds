@@ -13,7 +13,7 @@ export default function ProductCardStyleOneTwo({ datas }) {
       <div
         className="product-card-img w-full h-[322px] mt-4"
         style={{
-          background: `url(${import.meta.env.VITE_PUBLIC_URL}/assets/images/${
+          background: `url(public/assets/images/${
             datas.image
           }) no-repeat center`,
         }}

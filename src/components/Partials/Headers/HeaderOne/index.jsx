@@ -31,40 +31,16 @@ export default function HeaderOne({ className, drawerAction, type = 1 }) {
             </svg>
           </div>
           <div>
-            {type === 3 ? (
+        
               <Link to="/">
                 <img
                   width="152"
                   height="36"
-                  src={`${
-                    import.meta.env.VITE_PUBLIC_URL
-                  }/assets/images/logo-3.svg`}
+                  src={`public/assets/images/logo-3.svg`}
                   alt="logo"
                 />
               </Link>
-            ) : type === 4 ? (
-              <Link to="/">
-                <img
-                  width="152"
-                  height="36"
-                  src={`${
-                    import.meta.env.VITE_PUBLIC_URL
-                  }/assets/images/logo-4.svg`}
-                  alt="logo"
-                />
-              </Link>
-            ) : (
-              <Link to="/">
-                <img
-                  width="152"
-                  height="36"
-                  src={`${
-                    import.meta.env.VITE_PUBLIC_URL
-                  }/assets/images/logo.svg`}
-                  alt="logo"
-                />
-              </Link>
-            )}
+          
           </div>
           <div className="cart relative cursor-pointer">
             <Link to="/cart">

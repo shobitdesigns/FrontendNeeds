@@ -1,6 +1,5 @@
 import InputQuantityCom from "../Helpers/InputQuantityCom";
-
-export default function ProductsTable({ className }) {
+export default function ProductsTable({ className , cartItems}) {
   return (
     <div className={`w-full ${className || ""}`}>
       <div className="relative w-full overflow-x-auto border border-[#EDEDED]">

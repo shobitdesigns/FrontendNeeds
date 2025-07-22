@@ -3,8 +3,9 @@ import Compair from "../icons/Compair";
 import QuickViewIco from "../icons/QuickViewIco";
 import Star from "../icons/Star";
 import ThinLove from "../icons/ThinLove";
-
+import { useCart } from "../../Contexts/CartContext";
 export default function ProductCardRowStyleTwo({ className, datas, type }) {
+  const { addToCart} = useCart();
   return (
     <div
       data-aos="fade-left"
@@ -15,7 +16,7 @@ export default function ProductCardRowStyleTwo({ className, datas, type }) {
       <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
         <div className="lg:w-1/2 w-1/3 h-full">
           <img
-            src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/${
+            src={`public/assets/images/${
               datas.image
             }`}
             alt=""
@@ -45,7 +46,7 @@ export default function ProductCardRowStyleTwo({ className, datas, type }) {
                 {datas.offer_price}
               </span>
             </p>
-            <button type="button" className="w-[110px] h-[30px]">
+            <button type="button" className="w-[110px] h-[30px]"   onClick={() => addToCart(datas)}>
               <span className={type === 3 ? "blue-btn" : "yellow-btn"}>
                 {" "}
                 Add To Cart

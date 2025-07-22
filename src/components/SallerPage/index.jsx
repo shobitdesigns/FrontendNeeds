@@ -61,9 +61,7 @@ export default function SallerPage() {
               data-aos="fade-right"
               className="saller-info w-full mb-[40px] sm:h-[328px]  sm:flex justify-between items-center px-11 overflow-hidden relative py-10 sm:py-0"
               style={{
-                background: `url(${
-                  import.meta.env.VITE_PUBLIC_URL
-                }/assets/images/saller-cover.png) no-repeat`,
+                background: `public/assets/images/saller-cover.png) no-repeat`,
                 backgroundSize: "cover",
               }}
             >
@@ -151,9 +149,7 @@ export default function SallerPage() {
                 <div className="flex sm:justify-center justify-start">
                   <div className="w-[170px] h-[170px] flex justify-center items-center rounded-full bg-white mb-1">
                     <img
-                      src={`${
-                        import.meta.env.VITE_PUBLIC_URL
-                      }/assets/images/saller-7.png`}
+                      src={`public/assets/images/saller-7.png`}
                       alt="logo"
                       className="object-contain"
                     />
@@ -182,9 +178,7 @@ export default function SallerPage() {
                 {/* ads */}
                 <div className="w-full hidden lg:block h-[295px]">
                   <img
-                    src={`${
-                      import.meta.env.VITE_PUBLIC_URL
-                    }/assets/images/bannera-5.png`}
+                    src={`public/assets/images/bannera-5.png`}
                     alt=""
                     className="w-full h-full object-contain"
                   />
@@ -251,9 +245,7 @@ export default function SallerPage() {
 
                 <div className="w-full h-[164px] overflow-hidden mb-[40px]">
                   <img
-                    src={`${
-                      import.meta.env.VITE_PUBLIC_URL
-                    }/assets/images/bannera-6.png`}
+                    src={`public/assets/images/bannera-6.png`}
                     alt=""
                     className="w-full h-full object-contain"
                   />

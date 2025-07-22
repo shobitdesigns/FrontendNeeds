@@ -3,12 +3,14 @@ import Compair from "../icons/Compair";
 import QuickViewIco from "../icons/QuickViewIco";
 import Star from "../icons/Star";
 import ThinLove from "../icons/ThinLove";
+import { useCart } from "../../Contexts/CartContext";
 
 export default function ProductCardStyleOne({ datas, type }) {
   const available =
     (datas.cam_product_sale /
       (datas.cam_product_available + datas.cam_product_sale)) *
     100;
+    const {addToCart}= useCart();
   return (
     <div
       className="product-card-one w-full h-full bg-white relative group overflow-hidden"
@@ -17,7 +19,7 @@ export default function ProductCardStyleOne({ datas, type }) {
       <div
         className="product-card-img w-full h-[300px]"
         style={{
-          background: `url(${import.meta.env.VITE_PUBLIC_URL}/assets/images/${
+          background: `url(public/assets/images/${
             datas.image
           }) no-repeat center`,
         }}
@@ -65,6 +67,7 @@ export default function ProductCardStyleOne({ datas, type }) {
         <div className="absolute w-full h-10 px-[30px] left-0 top-40 group-hover:top-[85px] transition-all duration-300 ease-in-out">
           <button
             type="button"
+            onClick={() => addToCart(datas)}
             className={type === 3 ? "blue-btn" : "yellow-btn"}
           >
             <div className="flex items-center space-x-3">
