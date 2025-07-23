@@ -751,98 +751,16 @@ export default function Navbar({ className, type }) {
               <div className="nav">
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                   <li className="relative">
+                    <Link to="/">
                     <span
                       className={`flex items-center text-sm font-600 cursor-pointer ${
                         type === 3 ? "text-white" : "text-qblacktext"
                       }`}
                     >
-                      <span>Homepage</span>
-                      <span className="ml-1.5 ">
-                        <Arrow className="fill-current" />
-                      </span>
+                      <span>Home</span>
+                   
                     </span>
-                    <div className="sub-menu w-[220px] absolute left-0 top-[60px]">
-                      <div
-                        className="w-full bg-white flex justify-between items-center "
-                        style={{
-                          boxShadow: "0px 15px 50px 0px rgba(0, 0, 0, 0.14)",
-                        }}
-                      >
-                        <div className="categories-wrapper w-full h-full p-5">
-                          <div>
-                            <div className="category-items">
-                              <ul className="flex flex-col space-y-2">
-                                <li>
-                                  <Link to="/">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Home One
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/home-two">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Home Two
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/home-three">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Home Three
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/home-four">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Home Four
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/home-five">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Home Five
-                                    </span>
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    </Link>
                   </li>
                   <li>
                     <span
@@ -850,7 +768,7 @@ export default function Navbar({ className, type }) {
                         type === 3 ? "text-white" : "text-qblacktext"
                       }`}
                     >
-                      <span>Shop</span>
+                      <span>Bestsellers</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>

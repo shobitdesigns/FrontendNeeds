@@ -15,25 +15,7 @@ const { cartItems } = useCart();
         <div className="relative h-full">
           <div className="flex justify-between items-center h-full">
             <div>
-              {type === 3 ? (
-                <Link to="/">
-                  <img
-                    width="152"
-                    height="36"
-                    src={`public/assets/images/logo-3.svg`}
-                    alt="logo"
-                  />
-                </Link>
-              ) : type === 4 ? (
-                <Link to="/">
-                  <img
-                    width="152"
-                    height="36"
-                    src={`public/assets/images/logo-4.svg`}
-                    alt="logo"
-                  />
-                </Link>
-              ) : (
+           
                 <Link to="/">
                   <img
                     width="152"
@@ -42,7 +24,7 @@ const { cartItems } = useCart();
                     alt="logo"
                   />
                 </Link>
-              )}
+       
             </div>
             <div className="w-[517px] h-[44px]">
               <SearchBox type={type} className="search-com" />
@@ -55,8 +37,8 @@ const { cartItems } = useCart();
                   </span>
                 </Link>
                 <span
-                  className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] ${
-                    type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow"
+                  className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] 
+                    bg-qyellow
                   }`}
                 >
                   2
@@ -69,8 +51,8 @@ const { cartItems } = useCart();
                   </span>
                 </Link>
                 <span
-                  className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] ${
-                    type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow"
+                  className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]
+                    bg-qyellow
                   }`}
                 >
                   1

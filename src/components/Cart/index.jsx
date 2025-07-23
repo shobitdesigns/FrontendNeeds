@@ -1,7 +1,7 @@
- import { useMemo } from "react";
  import { useCart } from "../Contexts/CartContext";
+ import { Link } from "react-router-dom";
 export default function Cart({ className, type }) {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart ,subtotal } = useCart();
  
 
   return (
@@ -66,21 +66,21 @@ export default function Cart({ className, type }) {
           <div className="product-actions px-4 mb-[30px]">
             <div className="total-equation flex justify-between items-center mb-[28px]">
               <span className="text-[15px] font-500 text-qblack">Subtotal</span>
-              <span className="text-[15px] font-500 text-qred "> 00</span>
+              <span className="text-[15px] font-500 text-qred ">${subtotal.toFixed(2)}</span>
             </div>
             <div className="product-action-btn">
-              <a href="#">
+              <Link to="/cart">
                 <div className="gray-btn w-full h-[50px] mb-[10px] ">
                   <span>View Cart</span>
                 </div>
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/cart">
                 <div className="w-full h-[50px]">
                   <div className={type === 3 ? "blue-btn" : "yellow-btn"}>
                     <span className="text-sm">Checkout Now</span>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="w-full px-4 mt-[20px]">

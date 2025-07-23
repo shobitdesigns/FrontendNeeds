@@ -5,9 +5,9 @@ import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 import ProductsTable from "./ProductsTable";
-
-
+import { useCart } from "../Contexts/CartContext";
 export default function CardPage({ cart = true }) {
+ const {subtotal} = useCart();
   return (
     <Layout childrenClasses={cart ? "pt-0 pb-0" : ""}>
       {cart === false ? (
@@ -67,7 +67,7 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[15px] font-medium text-qblack">
                         Subtotal
                       </p>
-                      <p className="text-[15px] font-medium text-qred">$365</p>
+                      <p className="text-[15px] font-medium text-qred">${subtotal.toFixed(2)}</p>
                     </div>
                     <div className="w-full h-[1px] bg-[#EDEDED]"></div>
                   </div>

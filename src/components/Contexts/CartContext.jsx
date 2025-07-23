@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect,useMemo } from "react";
 
 const CartContext = createContext();
 
@@ -47,9 +47,24 @@ export const CartProvider = ({ children }) => {
       );
     }
   };
+  const subtotal = useMemo(() => {
+    return cartItems.reduce((total, item) => {
+      const rawPrice = item.offer_price ?? item.price ?? "0";
+      const cleanPrice = parseFloat(
+        String(rawPrice).replace(/[^0-9.]/g, "")
+      );
+      const quantity = parseInt(item.quantity) || 1;
+  
+      if (isNaN(cleanPrice) || isNaN(quantity)) return total;
+  
+      return total + cleanPrice * quantity;
+    }, 0);
+  }, [cartItems]);
 
   const clearCart = () => setCartItems([]);
 ;
+
+
 
   const totalItems = cartItems.reduce(
     (total, item) => total + item.quantity,
@@ -65,6 +80,7 @@ export const CartProvider = ({ children }) => {
         updateQuantity,
         clearCart,
         totalItems,
+         subtotal
       
       }}
     >
