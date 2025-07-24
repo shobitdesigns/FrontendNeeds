@@ -3,8 +3,10 @@ import ThinBag from "../../../Helpers/icons/ThinBag";
 import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 import TopBar from "./TopBar";
+import { useCart } from "../../../Contexts/CartContext";
 
 export default function HeaderOne({ className, drawerAction, type = 1 }) {
+  const {cartItems} = useCart();
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       <TopBar className="quomodo-shop-top-bar" />
@@ -53,7 +55,7 @@ export default function HeaderOne({ className, drawerAction, type = 1 }) {
                 type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow text-qblack"
               }`}
             >
-              15
+             {cartItems.length}
             </span>
           </div>
         </div>

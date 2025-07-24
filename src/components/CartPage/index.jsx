@@ -178,7 +178,7 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[18px] font-medium text-qblack">
                         Total
                       </p>
-                      <p className="text-[18px] font-medium text-qred">$365</p>
+                      <p className="text-[18px] font-medium text-qred">${subtotal}</p>
                     </div>
                   </div>
                   <Link to="/checkout">

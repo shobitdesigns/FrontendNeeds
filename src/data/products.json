@@ -11,7 +11,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
     },
     {
       "id": "62aefe9a17780a9e549646c2",
@@ -24,7 +25,9 @@
       "campaingn_product": true,
       "cam_product_available": 20,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": [ "product-img-2.jpg"]
+
     },
     {
       "id": "62aefe9af9a0e865ee49c99e",
@@ -37,7 +40,9 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "popular"
+      "product_type": "popular",
+     "related_images": [ "product-img-3.jpg"]
+
     },
     {
       "id": "62aefe9a6e662e77accd4cc4",
@@ -50,7 +55,8 @@
       "campaingn_product": true,
       "cam_product_available": 48,
       "cam_product_sale": 12,
-      "product_type": null
+      "product_type": null,
+     "related_images": [ "product-img-4.jpg"]
     },
     {
       "id": "62aefe9a9e1c4b69e47fa40f",
@@ -63,7 +69,8 @@
       "campaingn_product": true,
       "cam_product_available": 12,
       "cam_product_sale": 8,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-5.jpg" ]
     },
     {
       "id": "62aefe9aa96283a41a9b46fc",
@@ -76,7 +83,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-6.jpg"]
     },
     {
       "id": "62aefe9aa2577bc8fa4ea7bc",
@@ -89,7 +97,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "new"
+      "product_type": "new",
+     "related_images": ["product-img-7.jpg"]
     },
     {
       "id": "62aefe9aa117932437d0da93",
@@ -102,7 +111,8 @@
       "campaingn_product": true,
       "cam_product_available": 19,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-8.jpg"]
     },
     {
       "id": "62aefe9a93cc2c0e16ddb207",
@@ -115,7 +125,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-9.jpg"]
     },
     {
       "id": "62aefe9a39099843b144dc3a",
@@ -128,7 +139,8 @@
       "campaingn_product": true,
       "cam_product_available": 19,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-10.jpg"]
     },
     {
       "id": "62aefe9af9a0e865ee49c999999e",
@@ -141,7 +153,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "popular"
+      "product_type": "popular",
+     "related_images": ["product-img-1.jpg"]
     },
     {
       "id": "62aefe9a9a52d2ee3301918a",
@@ -154,7 +167,8 @@
       "campaingn_product": true,
       "cam_product_available": 25,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": [ "product-img-2.jpg"]
     },
     {
       "id": "62aefe9ad1e0cfc12838c3c4",
@@ -167,7 +181,8 @@
       "campaingn_product": true,
       "cam_product_available": 16,
       "cam_product_sale": 9,
-      "product_type": null
+      "product_type": null,
+     "related_images": [ "product-img-3.jpg"]
     },
     {
       "id": "62aefe9a05ca1ea50003e072",
@@ -180,7 +195,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-4.jpg"]
     },
     {
       "id": "62aefe9a369487a7db38e327",
@@ -193,7 +209,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-5.jpg"]
     },
     {
       "id": "62aefe9ab5a58ec7eba5e003",
@@ -206,7 +223,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "popular"
+      "product_type": "popular",
+     "related_images": ["product-img-16.jpg"]
     },
     {
       "id": "62aefe9acd2d5e4c13d5937c",
@@ -219,7 +237,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "new"
+      "product_type": "new",
+     "related_images": ["product-img-17.jpg"]
     },
     {
       "id": "62aefe9aa06338a7636fde5c",
@@ -232,7 +251,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "popular"
+      "product_type": "popular",
+     "related_images": ["product-img-18.jpg"]
     },
     {
       "id": "62aefe9ac47bcd0a2ea95630",
@@ -245,7 +265,8 @@
       "campaingn_product": true,
       "cam_product_available": 10,
       "cam_product_sale": 8,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-19.jpg"]
     },
     {
       "id": "62aefe9ae487b5c3e1fff5ae",
@@ -258,7 +279,8 @@
       "campaingn_product": true,
       "cam_product_available": 18,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-20.jpg"]
     },
     {
       "id": "62aefe9acd2d5e4c13d5937cfagaga",
@@ -271,7 +293,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "new"
+      "product_type": "new",
+     "related_images": ["product-img-21.jpg"]
     },
     {
       "id": "62aefe9aa06338a7fweq636fde5c",
@@ -284,7 +307,8 @@
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
-      "product_type": "popular"
+      "product_type": "popular",
+     "related_images": ["product-img-22.jpg"]
     },
     {
       "id": "62aefegfasgaqgqeghub9ac47bcd0a2ea95630",
@@ -297,7 +321,8 @@
       "campaingn_product": true,
       "cam_product_available": 10,
       "cam_product_sale": 8,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-23.jpg"]
     },
     {
       "id": "62aefe9ae487b5c3efqwredgaefafa1fff5ae",
@@ -310,7 +335,8 @@
       "campaingn_product": true,
       "cam_product_available": 18,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-24.jpg"]
     },
     {
       "id": "62aefe9ae4fasgboihpnokmokm87b5c3efqwredgaefafa1fff5ae",
@@ -323,7 +349,8 @@
       "campaingn_product": true,
       "cam_product_available": 18,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-25.jpg"]
     },
     {
       "id": "fafafsare62aefe9ae487b5c3efqwredgaefafa1fff5ae",
@@ -336,7 +363,8 @@
       "campaingn_product": true,
       "cam_product_available": 18,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
     },
     {
       "id": "62aefea9ae4a87b5c3effqwreadgaefafa1ffaff5ae",
@@ -349,7 +377,8 @@
       "campaingn_product": true,
       "cam_product_available": 18,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
     },
     {
       "id": "62aefea9ae4a87b5c3esswsssssffqwreadgaefafa1ffaff5ae",
@@ -362,7 +391,8 @@
       "campaingn_product": true,
       "cam_product_available": 18,
       "cam_product_sale": 10,
-      "product_type": null
+      "product_type": null,
+     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
     }
   ]
 }

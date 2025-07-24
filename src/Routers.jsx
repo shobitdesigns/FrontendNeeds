@@ -22,12 +22,16 @@ import SingleProductPage from "./components/SingleProductPage";
 import TermsCondition from "./components/TermsCondition/index";
 import TrackingOrder from "./components/TrackingOrder";
 import Wishlist from "./components/Wishlist";
+import ScrollToTopLayout from "./components/Customs/ScrollToTop.jsx";
 
 const router = createBrowserRouter([
+   {
+path: "/",
+    element: <ScrollToTopLayout />,
+      children: [
   { path: "/", element: <Home /> },
-
   { path: "/all-products", element: <AllProductPage /> },
-  { path: "/single-product", element: <SingleProductPage /> },
+  { path: "/single-product/:id", element: <SingleProductPage /> },
   { path: "/cart", element: <CardPage /> },
   { path: "/checkout", element: <CheakoutPage /> },
   { path: "/wishlist", element: <Wishlist /> },
@@ -48,8 +52,9 @@ const router = createBrowserRouter([
   { path: "/privacy-policy", element: <PrivacyPolicy /> },
   { path: "/terms-condition", element: <TermsCondition /> },
   { path: "*", element: <FourZeroFour /> },
+   ],
+  },
 ]);
-
 function Routers() {
   return <RouterProvider router={router} />;
 }

@@ -1,90 +1,75 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Star from "../Helpers/icons/Star";
 import Selectbox from "../Helpers/Selectbox";
+import { useCart } from "../Contexts/CartContext";
+import InputQuantityCom from "../Helpers/InputQuantityCom";
 
-export default function ProductView({ className, reportHandler }) {
-  const productsImg = [
-    {
-      id: 1,
-      src: "product-details-1.png",
-      color: "#FFBC63",
-    },
-    {
-      id: 2,
-      src: "product-details-2.png",
-      color: "#649EFF",
-    },
-    {
-      id: 3,
-      src: "product-details-3.png",
-      color: "#FFFFFF",
-    },
-    {
-      id: 4,
-      src: "product-details-4.png",
-      color: "#FF7173",
-    },
-    {
-      id: 6,
-      src: "product-details-5.png",
-      color: "",
-    },
-  ];
+export default function ProductView({ className, reportHandler, product }) {
+  const productsImg = product.related_images || [];
 
-  const [src, setSrc] = useState(productsImg[0].src);
+  const [src, setSrc] = useState(productsImg[0] || "");
+
   const changeImgHandler = (current) => {
     setSrc(current);
   };
+  const { addToCart, updateQuantity, cartItems } = useCart()
   const [quantity, setQuantity] = useState(1);
-  const increment = () => {
-    setQuantity((prev) => prev + 1);
-  };
-  const decrement = () => {
-    if (quantity > 1) {
-      setQuantity((prev) => prev - 1);
+
+
+  useEffect(() => {
+    const existing = cartItems.find(item => item.id === product.id);
+    if (existing) {
+      setQuantity(existing.quantity);
     }
+  }, [cartItems, product.id]);
+
+  const increaseQuantity = () => setQuantity(q => q + 1);
+  const decreaseQuantity = () => setQuantity(q => Math.max(1, q - 1));
+
+  const handleAddToCart = () => {
+    const itemWithQuantity = { ...product, quantity };
+    addToCart(itemWithQuantity);
   };
 
+
+  const price = parseFloat(product.price.replace('$', ''));
+  const offerPrice = parseFloat(product.offer_price.replace('$', ''));
+
+  const discountPercentage = Math.round(((price - offerPrice) / price) * 100);
   return (
     <div
-      className={`product-view w-full lg:flex justify-between ${
-        className || ""
-      }`}
+      className={`product-view w-full lg:flex justify-between ${className || ""
+        }`}
     >
       <div data-aos="fade-right" className="lg:w-1/2 xl:mr-[70px] lg:mr-[50px]">
         <div className="w-full">
           <div className="w-full h-[600px] border border-qgray-border flex justify-center items-center overflow-hidden relative mb-3">
             <img
-              src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/${src}`}
+              src={`/assets/images/${src}`}
               alt=""
               className="object-contain"
             />
             <div className="w-[80px] h-[80px] rounded-full bg-qyellow text-qblack flex justify-center items-center text-xl font-medium absolute left-[30px] top-[30px]">
-              <span>-50%</span>
+              <span>-{discountPercentage}%</span>
             </div>
           </div>
           <div className="flex gap-2 flex-wrap">
-            {productsImg &&
-              productsImg.length > 0 &&
-              productsImg.map((img) => (
-                <div
-                  onClick={() => changeImgHandler(img.src)}
-                  key={img.id}
-                  className="w-[110px] h-[110px] p-[15px] border border-qgray-border cursor-pointer"
-                >
-                  <img
-                    src={`${import.meta.env.VITE_PUBLIC_URL}/assets/images/${
-                      img.src
-                    }`}
-                    alt=""
-                    className={`w-full h-full object-contain ${
-                      src !== img.src ? "opacity-50" : ""
-                    } `}
-                  />
-                </div>
-              ))}
+            {productsImg.map((img, index) => (
+              <div
+                onClick={() => changeImgHandler(img)}
+                key={index}
+                className="w-[110px] h-[110px] p-[15px] border border-qgray-border cursor-pointer"
+              >
+                <img
+                  src={`/assets/images/${img}`}
+                  alt=""
+                  className={`w-full h-full object-contain ${src !== img ? "opacity-50" : ""}`}
+                />
+              </div>
+            ))}
           </div>
         </div>
+
       </div>
       <div className="flex-1">
         <div className="product-details w-full mt-10 lg:mt-0">
@@ -92,13 +77,13 @@ export default function ProductView({ className, reportHandler }) {
             data-aos="fade-up"
             className="text-qgray text-xs font-normal uppercase tracking-wider mb-2 inline-block"
           >
-            Mobile Phones
+            {product.brand}
           </span>
           <p
             data-aos="fade-up"
             className="text-xl font-medium text-qblack mb-4"
           >
-            Samsung Galaxy Z Fold3 5G 3 colors in 512GB
+            {product.title}
           </p>
 
           <div
@@ -113,15 +98,15 @@ export default function ProductView({ className, reportHandler }) {
               <Star />
             </div>
             <span className="text-[13px] font-normal text-qblack">
-              6 Reviews
+              {product.review}
             </span>
           </div>
 
           <div data-aos="fade-up" className="flex space-x-2 items-center mb-7">
             <span className="text-sm font-500 text-qgray line-through mt-2">
-              $9.99
+              {product.price}
             </span>
-            <span className="text-2xl font-500 text-qred">$6.99</span>
+            <span className="text-2xl font-500 text-qred">{product.offer_price}</span>
           </div>
 
           <p
@@ -208,7 +193,7 @@ export default function ProductView({ className, reportHandler }) {
             <div className="w-[120px] h-full px-[26px] flex items-center border border-qgray-border">
               <div className="flex justify-between items-center w-full">
                 <button
-                  onClick={decrement}
+                  onClick={decreaseQuantity}
                   type="button"
                   className="text-base text-qgray"
                 >
@@ -216,7 +201,7 @@ export default function ProductView({ className, reportHandler }) {
                 </button>
                 <span className="text-qblack">{quantity}</span>
                 <button
-                  onClick={increment}
+                  onClick={increaseQuantity}
                   type="button"
                   className="text-base text-qgray"
                 >
@@ -246,12 +231,9 @@ export default function ProductView({ className, reportHandler }) {
               </button>
             </div>
             <div className="flex-1 h-full">
-              <button
-                type="button"
-                className="black-btn text-sm font-semibold w-full h-full"
-              >
-                Add To Cart
-              </button>
+              <button type="button"
+                className="black-btn text-sm font-semibold w-full h-full wavy " onClick={handleAddToCart}>Add to Cart</button>
+
             </div>
           </div>
 

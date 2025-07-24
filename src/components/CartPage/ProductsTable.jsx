@@ -27,8 +27,6 @@ const { cartItems = [], removeFromCart, updateQuantity } = useCart();
     <p className="text-center text-sm text-qgray py-4">Your cart is empty</p>
   ) : (
     cartItems.map((item) => (
-      
-
             <tr className="bg-white border-b hover:bg-gray-50">
               <td className="pl-10  py-4  w-[380px]">
                 <div className="flex space-x-6 items-center">

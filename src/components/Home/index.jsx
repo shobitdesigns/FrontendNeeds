@@ -54,7 +54,7 @@ export default function Home() {
           seeMoreUrl="/all-products"
           categoryTitle="Top Selling Products"
         >
-          <SectionStyleTwo products={products.slice(3, products.length)} />
+          <SectionStyleTwo key={products.id} products={products.slice(3, products.length)} />
         </ViewMoreTitle>
         <ViewMoreTitle
           className="best-sallers-section mb-[60px]"

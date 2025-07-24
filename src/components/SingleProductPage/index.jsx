@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import data from "../../data/products.json";
 import BreadcrumbCom from "../BreadcrumbCom";
 import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
@@ -10,6 +11,12 @@ import Reviews from "./Reviews";
 import SallerInfo from "./SallerInfo";
 
 export default function SingleProductPage() {
+  const { id } = useParams();
+ const product = data.products.find((item) => item.id.toString() === id);
+  console.log(id.brand)
+  if (!product) {
+    return <div>Product not found</div>;
+  }
   const [tab, setTab] = useState("des");
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
@@ -99,7 +106,7 @@ export default function SingleProductPage() {
             </div>
             <div className="w-full bg-white pb-[60px]">
               <div className="container-x mx-auto">
-                <ProductView reportHandler={() => setReport(!report)} />
+                <ProductView product={product} reportHandler={() => setReport(!report)} />
               </div>
             </div>
           </div>
@@ -114,11 +121,10 @@ export default function SingleProductPage() {
                   <li>
                     <span
                       onClick={() => setTab("des")}
-                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
-                        tab === "des"
-                          ? "border-qyellow text-qblack "
-                          : "border-transparent text-qgray"
-                      }`}
+                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${tab === "des"
+                        ? "border-qyellow text-qblack "
+                        : "border-transparent text-qgray"
+                        }`}
                     >
                       Description
                     </span>
@@ -126,11 +132,10 @@ export default function SingleProductPage() {
                   <li>
                     <span
                       onClick={() => setTab("review")}
-                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
-                        tab === "review"
-                          ? "border-qyellow text-qblack "
-                          : "border-transparent text-qgray"
-                      }`}
+                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${tab === "review"
+                        ? "border-qyellow text-qblack "
+                        : "border-transparent text-qgray"
+                        }`}
                     >
                       Reviews
                     </span>
@@ -138,11 +143,10 @@ export default function SingleProductPage() {
                   <li>
                     <span
                       onClick={() => setTab("info")}
-                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${
-                        tab === "info"
-                          ? "border-qyellow text-qblack "
-                          : "border-transparent text-qgray"
-                      }`}
+                      className={`py-[15px] sm:text-[15px] text-sm sm:block border-b font-medium cursor-pointer ${tab === "info"
+                        ? "border-qyellow text-qblack "
+                        : "border-transparent text-qgray"
+                        }`}
                     >
                       Seller Info
                     </span>

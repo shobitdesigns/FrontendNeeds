@@ -512,11 +512,10 @@ export default function Navbar({ className, type }) {
                     <li className="category-item">
                       <Link to="/all-products">
                         <div
-                          className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
-                            type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
-                          }`}
+                          className={`flex justify-between items-center px-5 h-10 bg-white
+                              transition-all duration-300 ease-in-out cursor-pointer text-qblack 
+                         hover:bg-qyellow
+                          `}
                         >
                           <div className="flex items-center space-x-6">
                             <span>
@@ -571,11 +570,10 @@ export default function Navbar({ className, type }) {
                     <li className="category-item">
                       <Link to="/all-products">
                         <div
-                          className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
-                            type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
-                          }`}
+                          className={`flex justify-between items-center px-5 h-10 bg-white
+                              transition-all duration-300 ease-in-out cursor-pointer text-qblack 
+                            hover:bg-qyellow
+                          `}
                         >
                           <div className="flex items-center space-x-6">
                             <span>
@@ -631,11 +629,10 @@ export default function Navbar({ className, type }) {
                     <li className="category-item ">
                       <Link to="/all-products">
                         <div
-                          className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
-                            type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
-                          }`}
+                          className={`flex justify-between items-center px-5 h-10 bg-white 
+                             transition-all duration-300 ease-in-out cursor-pointer text-qblack 
+                           hover:bg-qyellow
+                          `}
                         >
                           <div className="flex items-center space-x-6">
                             <span>
@@ -690,11 +687,10 @@ export default function Navbar({ className, type }) {
                     <li className="category-item">
                       <Link to="/all-products">
                         <div
-                          className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
-                            type === 3
-                              ? "hover:bg-qh3-blue hover:text-white"
-                              : "hover:bg-qyellow"
-                          }`}
+                          className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 
+                            ease-in-out cursor-pointer text-qblack 
+                           hover:bg-qyellow
+                          `}
                         >
                           <div className="flex items-center space-x-6">
                             <span>
@@ -753,9 +749,9 @@ export default function Navbar({ className, type }) {
                   <li className="relative">
                     <Link to="/">
                     <span
-                      className={`flex items-center text-sm font-600 cursor-pointer ${
-                        type === 3 ? "text-white" : "text-qblacktext"
-                      }`}
+                      className={`flex items-center text-sm font-600 cursor-pointer 
+                        text-qblacktext
+                      `}
                     >
                       <span>Home</span>
                    
@@ -764,9 +760,8 @@ export default function Navbar({ className, type }) {
                   </li>
                   <li>
                     <span
-                      className={`flex items-center text-sm font-600 cursor-pointer ${
-                        type === 3 ? "text-white" : "text-qblacktext"
-                      }`}
+                      className={`flex items-center text-sm font-600 cursor-pointer text-qblacktext"
+                      `}
                     >
                       <span>Bestsellers</span>
                       <span className="ml-1.5 ">
@@ -793,11 +788,9 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/all-products">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent 
+                                       hover:text-qyellow hover:border-qyellow
+                                      `}
                                     >
                                       Shop Sidebar
                                     </span>
@@ -806,11 +799,9 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/all-products">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent  
+                                          hover:text-qyellow hover:border-qyellow
+                                      `}
                                     >
                                       Shop Fullwidth
                                     </span>
@@ -819,11 +810,9 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/all-products">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent
+                                          hover:text-qyellow hover:border-qyellow
+                                      `}
                                     >
                                       Shop Category Icon
                                     </span>
@@ -832,11 +821,7 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/all-products">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow`}
                                     >
                                       Shop Category Icon
                                     </span>
@@ -989,9 +974,7 @@ export default function Navbar({ className, type }) {
                           <div className="w-full h-[235px]">
                             <img
                               width=""
-                              src={`${
-                                import.meta.env.VITE_PUBLIC_URL
-                              }/assets/images/mega-menu-thumb.jpg`}
+                              src={`public/assets/images/mega-menu-thumb.jpg`}
                               alt=""
                               className="w-full h-full object-contain"
                             />
