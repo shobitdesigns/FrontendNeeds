@@ -4,13 +4,23 @@ import QuickViewIco from "../icons/QuickViewIco";
 import Star from "../icons/Star";
 import ThinLove from "../icons/ThinLove";
 import { useCart } from "../../Contexts/CartContext";
+import { useWishlist } from "../../Contexts/WishlistContext";
 
 export default function ProductCardStyleOne({ datas, type }) {
   const available =
     (datas.cam_product_sale /
       (datas.cam_product_available + datas.cam_product_sale)) *
     100;
-    const {addToCart}= useCart();
+  const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  const toggleWishlist = () => {
+    if (isInWishlist(datas.id)) {
+      removeFromWishlist(datas.id);
+    } else {
+      addToWishlist(datas);
+    }
+  };
   return (
     <div
       className="product-card-one w-full h-full bg-white relative group overflow-hidden"
@@ -19,9 +29,8 @@ export default function ProductCardStyleOne({ datas, type }) {
       <div
         className="product-card-img w-full h-[300px]"
         style={{
-          background: `url(public/assets/images/${
-            datas.image
-          }) no-repeat center`,
+          background: `url(public/assets/images/${datas.image
+            }) no-repeat center`,
         }}
       >
         {/* product available progress */}
@@ -41,9 +50,8 @@ export default function ProductCardStyleOne({ datas, type }) {
                   style={{
                     width: `${datas.campaingn_product ? 100 - available : 0}%`,
                   }}
-                  className={`h-full absolute left-0 top-0  ${
-                    type === 3 ? "bg-qh3-blue" : "bg-qyellow"
-                  }`}
+                  className={`h-full absolute left-0 top-0  ${type === 3 ? "bg-qh3-blue" : "bg-qyellow"
+                    }`}
                 ></div>
               </div>
             </div>
@@ -53,9 +61,8 @@ export default function ProductCardStyleOne({ datas, type }) {
         {datas.product_type && !datas.campaingn_product && (
           <div className="product-type absolute right-[14px] top-[17px]">
             <span
-              className={`text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider ${
-                datas.product_type === "popular" ? "bg-[#19CC40]" : "bg-qyellow"
-              }`}
+              className={`text-[9px] font-700 leading-none py-[6px] px-3 uppercase text-white rounded-full tracking-wider ${datas.product_type === "popular" ? "bg-[#19CC40]" : "bg-qyellow"
+                }`}
             >
               {datas.product_type}
             </span>
@@ -110,16 +117,22 @@ export default function ProductCardStyleOne({ datas, type }) {
       </div>
       {/* quick-access-btns */}
       <div className="quick-access-btns flex flex-col space-y-2 absolute group-hover:right-4 -right-10 top-20  transition-all duration-300 ease-in-out">
-        <a href="#">
+        {/* <a href="#">
           <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
             <QuickViewIco />
           </span>
-        </a>
-        <a href="#">
+        </a> */}
+
+
+        <button
+          onClick={toggleWishlist}
+        
+          title={isInWishlist(datas.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+        >
           <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-            <ThinLove />
+            <ThinLove filled={isInWishlist(datas.id)} className="w-6 h-6" />
           </span>
-        </a>
+        </button>
         <a href="#">
           <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
             <Compair />

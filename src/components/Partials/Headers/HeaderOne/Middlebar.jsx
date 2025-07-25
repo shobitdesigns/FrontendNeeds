@@ -6,9 +6,10 @@ import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
 import { Link } from "react-router-dom";
 import { useCart } from "../../../Contexts/CartContext";
-
+import { useWishlist } from "../../../Contexts/WishlistContext";
 export default function Middlebar({ className, type }) {
 const { cartItems } = useCart();
+const { wishlist} = useWishlist();
   return (
     <div className={`w-full h-[86px] bg-white ${className}`}>
       <div className="container-x mx-auto h-full">
@@ -50,13 +51,15 @@ const { cartItems } = useCart();
                     <ThinLove />
                   </span>
                 </Link>
-                <span
-                  className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]
+          
+                   {wishlist.length > 0 && (
+          <span  className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]
                     bg-qyellow
-                  }`}
-                >
-                  1
-                </span>
+                  }`}>
+            {wishlist.length}
+          </span>
+        )}
+              
               </div>
               <div className="cart-wrapper group relative py-4">
                 <div className="cart relative cursor-pointer">

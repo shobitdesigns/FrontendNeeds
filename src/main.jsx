@@ -7,6 +7,7 @@ import "./index.css";
 import 'react-range-slider-input/dist/style.css';
 import { registerSW } from "virtual:pwa-register";
 import { CartProvider } from "./components/Contexts/CartContext";
+import { WishlistProvider } from "./components/Contexts/WishlistContext";
 if (import.meta.env.MODE === "production") {
   registerSW();
 }
@@ -14,7 +15,9 @@ if (import.meta.env.MODE === "production") {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <CartProvider>
+          <WishlistProvider>
     <App />
+      </WishlistProvider>
     </CartProvider>
   </React.StrictMode>
 );

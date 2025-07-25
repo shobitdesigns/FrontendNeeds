@@ -1,0 +1,12 @@
+[
+  {
+    "id": "0001",
+    "name": "Electronics",
+    "icon": "FaTv"
+  },
+  {
+    "id": "0002",
+    "name": "Clothing",
+    "icon": "FaTshirt"
+  }
+]
