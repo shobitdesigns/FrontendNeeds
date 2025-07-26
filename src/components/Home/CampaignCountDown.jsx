@@ -134,7 +134,7 @@ export default function CampaignCountDown({
                         <img
                           width="170"
                           height="69"
-                          src={`public/assets/images/play-store.png`}
+                          src={`/public/assets/images/play-store.png`}
                           alt=""
                         />
                       </a>
@@ -144,7 +144,7 @@ export default function CampaignCountDown({
                         <img
                           width="170"
                           height="69"
-                          src={`public/assets/images/apple-store.png`}
+                          src={`/public/assets/images/apple-store.png`}
                           alt=""
                         />
                       </a>

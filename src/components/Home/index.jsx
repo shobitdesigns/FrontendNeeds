@@ -72,7 +72,7 @@ export default function Home() {
           className="products-ads-section mb-[60px]"
         />
         <SectionStyleOne
-          categoryBackground={`public/assets/images/section-category-2.jpg`}
+          categoryBackground={`/public/assets/images/section-category-2.jpg`}
           products={products.slice(4, products.length)}
           brands={brands}
           categoryTitle="Electronics"

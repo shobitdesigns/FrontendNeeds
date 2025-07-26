@@ -15,7 +15,7 @@ export default function Footer() {
                 <img
                   width="152"
                   height="36"
-                  src={`public/assets/images/logo.svg`}
+                  src={`/public/assets/images/logo.svg`}
                   alt="logo"
                 />
               </Link>
@@ -161,7 +161,7 @@ export default function Footer() {
               <img
                 width="318"
                 height="28"
-                src={`public/assets/images/payment-getways.png`}
+                src={`/public/assets/images/payment-getways.png`}
                 alt="payment-getways"
               />
             </a>

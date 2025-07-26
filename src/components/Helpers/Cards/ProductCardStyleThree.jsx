@@ -9,7 +9,7 @@ function ProductCardStyleThree({ datas }) {
       {/* thumb */}
       <div className="w-full h-[364px] bg-white flex justify-center items-center p-2.5 mb-6 relative overflow-hidden">
         <img
-          src={`public/assets/images/${
+          src={`/public/assets/images/${
             datas.image
           }`}
           alt=""

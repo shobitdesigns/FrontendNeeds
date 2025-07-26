@@ -29,12 +29,13 @@ const { wishlist} = useWishlist();
             <div>
            
                 <Link to="/">
-                  <img
+                  {/* <img
                     width="152"
                     height="36"
-                    src={`public/assets/images/logo.svg`}
+                    src={`/public/assets/images/logo.svg`}
                     alt="logo"
-                  />
+                  /> */}
+                  <h2 style={{fontSize:20 , color: "#ffbb38"}} >Daily Needs</h2>
                 </Link>
        
             </div>

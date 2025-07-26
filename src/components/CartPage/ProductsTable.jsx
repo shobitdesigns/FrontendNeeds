@@ -33,7 +33,7 @@ const { cartItems = [], removeFromCart, updateQuantity } = useCart();
                 <div className="flex space-x-6 items-center">
                   <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
                     <img
-                       src={`public/assets/images/${item.image}`}
+                       src={`/public/assets/images/${item.image}`}
                       alt="product"
                       className="w-full h-full object-contain"
                     />

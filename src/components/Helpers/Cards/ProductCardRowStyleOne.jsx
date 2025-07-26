@@ -16,7 +16,7 @@ export default function ProductCardRowStyleTwo({ className, datas, type }) {
       <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
         <div className="lg:w-1/2 w-1/3 h-full">
           <img
-            src={`public/assets/images/${
+            src={`/public/assets/images/${
               datas.image
             }`}
             alt=""

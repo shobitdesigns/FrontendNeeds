@@ -149,7 +149,7 @@ export default function SallerPage() {
                 <div className="flex sm:justify-center justify-start">
                   <div className="w-[170px] h-[170px] flex justify-center items-center rounded-full bg-white mb-1">
                     <img
-                      src={`public/assets/images/saller-7.png`}
+                      src={`/public/assets/images/saller-7.png`}
                       alt="logo"
                       className="object-contain"
                     />
@@ -178,7 +178,7 @@ export default function SallerPage() {
                 {/* ads */}
                 <div className="w-full hidden lg:block h-[295px]">
                   <img
-                    src={`public/assets/images/bannera-5.png`}
+                    src={`/public/assets/images/bannera-5.png`}
                     alt=""
                     className="w-full h-full object-contain"
                   />
@@ -245,7 +245,7 @@ export default function SallerPage() {
 
                 <div className="w-full h-[164px] overflow-hidden mb-[40px]">
                   <img
-                    src={`public/assets/images/bannera-6.png`}
+                    src={`/public/assets/images/bannera-6.png`}
                     alt=""
                     className="w-full h-full object-contain"
                   />

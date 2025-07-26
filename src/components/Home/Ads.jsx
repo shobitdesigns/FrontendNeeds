@@ -21,7 +21,7 @@ export default function Ads({ handler }) {
                 <img
                   width="152"
                   height="36"
-                  src={`public/assets/images/logo.svg`}
+                  src={`/public/assets/images/logo.svg`}
                   alt="logo"
                 />
               </Link>

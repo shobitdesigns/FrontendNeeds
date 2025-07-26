@@ -13,7 +13,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-1.png`}
+                src={`/public/assets/images/brand-1.png`}
                 alt="logo"
               />
             </div>
@@ -21,7 +21,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-2.png`}
+                src={`/public/assets/images/brand-2.png`}
                 alt="logo"
               />
             </div>
@@ -29,7 +29,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-3.png`}
+                src={`/public/assets/images/brand-3.png`}
                 alt="logo"
               />
             </div>
@@ -37,7 +37,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-4.png`}
+                src={`/public/assets/images/brand-4.png`}
                 alt="logo"
               />
             </div>
@@ -45,7 +45,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-5.png`}
+                src={`/public/assets/images/brand-5.png`}
                 alt="logo"
               />
             </div>
@@ -53,7 +53,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-6.png`}
+                src={`/public/assets/images/brand-6.png`}
                 alt="logo"
               />
             </div>
@@ -61,7 +61,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-7.png`}
+                src={`/public/assets/images/brand-7.png`}
                 alt="logo"
               />
             </div>
@@ -69,7 +69,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-8.png`}
+                src={`/public/assets/images/brand-8.png`}
                 alt="logo"
               />
             </div>
@@ -77,7 +77,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-9.png`}
+                src={`/public/assets/images/brand-9.png`}
                 alt="logo"
               />
             </div>
@@ -85,7 +85,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-10.png`}
+                src={`/public/assets/images/brand-10.png`}
                 alt="logo"
               />
             </div>
@@ -93,7 +93,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-11.png`}
+                src={`/public/assets/images/brand-11.png`}
                 alt="logo"
               />
             </div>
@@ -101,7 +101,7 @@ export default function BrandSection({ className, sectionTitle }) {
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`public/assets/images/brand-12.png`}
+                src={`/public/assets/images/brand-12.png`}
                 alt="logo"
               />
             </div>

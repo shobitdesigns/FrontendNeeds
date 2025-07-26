@@ -9,7 +9,7 @@ export default function BlogCard({ className, datas }) {
     >
       <div className="img w-full h-[340px]">
         <img
-          src={`public/assets/images/${
+          src={`/public/assets/images/${
             datas.picture
           }`}
           alt="blog"

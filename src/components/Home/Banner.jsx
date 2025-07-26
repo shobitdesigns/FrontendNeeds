@@ -12,10 +12,10 @@ export default function Banner({ className }) {
                   <picture>
                     <source
                       media="(min-width:1025px)"
-                      srcSet={`public/assets/images/banner-1.png`}
+                      srcSet={`/public/assets/images/banner-1.png`}
                     />
                     <img
-                      src={`public/assets/images/banner-1.2.png`}
+                      src={`/public/assets/images/banner-1.2.png`}
                       alt=""
                       className="w-full max-w-full h-auto object-cover"
                     />
@@ -29,7 +29,7 @@ export default function Banner({ className }) {
                 <div className="w-full xl:h-1/2">
                   <Link to="/single-product">
                     <img
-                      src={`public/assets/images/banner-2.png`}
+                      src={`/public/assets/images/banner-2.png`}
                       alt=""
                       className="w-full h-full"
                     />
@@ -38,7 +38,7 @@ export default function Banner({ className }) {
                 <div className="w-full xl:h-1/2">
                   <Link to="/single-product">
                     <img
-                      src={`public/assets/images/banner-3.png`}
+                      src={`/public/assets/images/banner-3.png`}
                       alt=""
                       className="w-full h-full"
                     />

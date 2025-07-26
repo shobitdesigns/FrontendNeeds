@@ -66,9 +66,7 @@ export default function ProductsCompaire() {
                     <div className="product-img flex justify-center mb-3 ">
                       <div className="w-[161px] h-[161px]">
                         <img
-                          src={`${
-                            import.meta.env.VITE_PUBLIC_URL
-                          }/assets/images/product-img-15.jpg`}
+                          src={`/public/assets/images/product-img-15.jpg`}
                           alt=""
                           className="w-full h-full object-contain"
                         />
@@ -114,9 +112,7 @@ export default function ProductsCompaire() {
                     <div className="product-img flex justify-center mb-3 ">
                       <div className="w-[161px] h-[161px]">
                         <img
-                          src={`${
-                            import.meta.env.VITE_PUBLIC_URL
-                          }/assets/images/product-img-16.jpg`}
+                          src={`/public/assets/images/product-img-16.jpg`}
                           alt=""
                           className="w-full h-full object-contain"
                         />
@@ -162,9 +158,7 @@ export default function ProductsCompaire() {
                     <div className="product-img flex justify-center mb-3 ">
                       <div className="w-[161px] h-[161px]">
                         <img
-                          src={`${
-                            import.meta.env.VITE_PUBLIC_URL
-                          }/assets/images/product-img-12.jpg`}
+                          src={`/public/assets/images/product-img-12.jpg`}
                           alt=""
                           className="w-full h-full object-contain"
                         />
@@ -210,9 +204,7 @@ export default function ProductsCompaire() {
                     <div className="product-img flex justify-center mb-3 ">
                       <div className="w-[161px] h-[161px]">
                         <img
-                          src={`${
-                            import.meta.env.VITE_PUBLIC_URL
-                          }/assets/images/product-img-11.jpg`}
+                          src={`/public/assets/images/product-img-11.jpg`}
                           alt=""
                           className="w-full h-full object-contain"
                         />

@@ -10,7 +10,7 @@ export default function ProductCardRowStyleTwo({ className, datas }) {
         <div className="w-full h-full flex space-x-5 justify-center items-center">
           <div className="w-[75px] h-[75px]">
             <img
-              src={`public/assets/images/${
+              src={`/public/assets/images/${
                 datas.image
               }`}
               alt=""

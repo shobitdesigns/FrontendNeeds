@@ -38,7 +38,7 @@ export default function HeaderOne({ className, drawerAction, type = 1 }) {
                 <img
                   width="152"
                   height="36"
-                  src={`public/assets/images/logo-3.svg`}
+                  src={`/public/assets/images/logo-3.svg`}
                   alt="logo"
                 />
               </Link>

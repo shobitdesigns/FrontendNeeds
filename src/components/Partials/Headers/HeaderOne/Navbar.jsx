@@ -974,7 +974,7 @@ export default function Navbar({ className, type }) {
                           <div className="w-full h-[235px]">
                             <img
                               width=""
-                              src={`public/assets/images/mega-menu-thumb.jpg`}
+                              src={`/public/assets/images/mega-menu-thumb.jpg`}
                               alt=""
                               className="w-full h-full object-contain"
                             />
