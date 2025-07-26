@@ -29,9 +29,11 @@ export default function Cart({ className, type }) {
             />
           </div>
           <div className="flex-1 flex flex-col justify-center">
+            <Link to={`/single-product/${item.id}`}>
             <p className="title mb-2 text-[13px] font-600 text-qblack leading-4 line-clamp-2 hover:text-blue-600">
               {item.title}
             </p>
+            </Link>
             <p className="price">
               <span className="offer-price text-qred font-600 text-[15px] ml-2">
                 {item.offer_price} x {item.quantity}

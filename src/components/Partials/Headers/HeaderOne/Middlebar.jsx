@@ -4,14 +4,25 @@ import ThinBag from "../../../Helpers/icons/ThinBag";
 import ThinLove from "../../../Helpers/icons/ThinLove";
 import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
+import { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../../Contexts/CartContext";
 import { useWishlist } from "../../../Contexts/WishlistContext";
 export default function Middlebar({ className, type }) {
 const { cartItems } = useCart();
 const { wishlist} = useWishlist();
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsFixed(window.scrollY > 0); // You can adjust 100 as needed
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <div className={`w-full h-[86px] bg-white ${className}`}>
+    <div className={`${isFixed ? "fixed top-0 z-50" : ""} w-full h-[86px] bg-white ${className} `}>
       <div className="container-x mx-auto h-full">
         <div className="relative h-full">
           <div className="flex justify-between items-center h-full">

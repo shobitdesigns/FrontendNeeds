@@ -3,8 +3,12 @@ import EmptyWishlistError from "../EmptyWishlistError";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
 import ProductsTable from "./ProductsTable";
+import { useWishlist } from "../Contexts/WishlistContext";
+import { useCart } from "../Contexts/CartContext";
 
-export default function Wishlist({ wishlist = true }) {
+export default function Wishlist({  wishlist: isWishlistPage = true }) {
+const { wishlist, clearWishlist } = useWishlist();
+  const {addToCart} =useCart();
   return (
     <Layout childrenClasses={wishlist ? "pt-0 pb-0" : ""}>
       {wishlist === false ? (
@@ -35,13 +39,17 @@ export default function Wishlist({ wishlist = true }) {
               <ProductsTable className="mb-[30px]" />
               <div className="w-full mt-[30px] flex sm:justify-end justify-start">
                 <div className="sm:flex sm:space-x-[30px] items-center">
-                  <button type="button">
+                  <button type="button" onClick={clearWishlist}>
                     <div className="w-full text-sm font-semibold text-qred mb-5 sm:mb-0">
                       Clean Wishlist
                     </div>
                   </button>
                   <div className="w-[180px] h-[50px]">
-                    <button type="button" className="yellow-btn">
+                    <button type="button" className="yellow-btn"   onClick={() => {
+    wishlist.forEach((item) => {
+      addToCart(item);
+    });
+  }}>
                       <div className="w-full text-sm font-semibold">
                         Add to Cart All
                       </div>

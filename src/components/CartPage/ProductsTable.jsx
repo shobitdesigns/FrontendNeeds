@@ -1,5 +1,6 @@
 import InputQuantityCom from "../Helpers/InputQuantityCom";
 import { useCart } from "../Contexts/CartContext";
+import { Link } from "react-router-dom";
 // import { data } from "autoprefixer";
 export default function ProductsTable({ className }) {
 const { cartItems = [], removeFromCart, updateQuantity } = useCart();
@@ -38,9 +39,11 @@ const { cartItems = [], removeFromCart, updateQuantity } = useCart();
                     />
                   </div>
                   <div className="flex-1 flex flex-col">
+                    <Link to={`/single-product/${item.id}`}>
                     <p className="font-medium text-[15px] text-qblack">
                       {item.title}
                     </p>
+                    </Link>
                   </div>
                 </div>
               </td>
