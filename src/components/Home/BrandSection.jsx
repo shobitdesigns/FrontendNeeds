@@ -1,3 +1,4 @@
+import brands from "../../data/brands.json"
 export default function BrandSection({ className, sectionTitle }) {
   return (
     <div data-aos="fade-up" className={`w-full ${className || ""}`}>
@@ -10,15 +11,18 @@ export default function BrandSection({ className, sectionTitle }) {
           </div>
         </div>
         <div className="grid lg:grid-cols-6 sm:grid-cols-4 grid-cols-2">
+          {brands.map((item) => (
+
           <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
-                src={`/public/assets/images/brand-1.png`}
+                src={`/public/assets/images/${item.icon}`}
                 alt="logo"
               />
             </div>
           </div>
-          <div className="item">
+          ))}
+          {/* <div className="item">
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`/public/assets/images/brand-2.png`}
@@ -105,7 +109,7 @@ export default function BrandSection({ className, sectionTitle }) {
                 alt="logo"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

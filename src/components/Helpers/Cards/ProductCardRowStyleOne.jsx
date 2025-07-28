@@ -4,21 +4,30 @@ import QuickViewIco from "../icons/QuickViewIco";
 import Star from "../icons/Star";
 import ThinLove from "../icons/ThinLove";
 import { useCart } from "../../Contexts/CartContext";
+import { useCompare } from "../../Contexts/AddToCompare";
+import { useWishlist } from "../../Contexts/WishlistContext";
 export default function ProductCardRowStyleTwo({ className, datas, type }) {
-  const { addToCart} = useCart();
+  const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const { addToCompare } = useCompare();
+  const toggleWishlist = () => {
+    if (isInWishlist(datas.id)) {
+      removeFromWishlist(datas.id);
+    } else {
+      addToWishlist(datas);
+    }
+  };
   return (
     <div
       data-aos="fade-left"
-      className={`product-row-card-style-one w-full h-[250px] bg-white group relative overflow-hidden ${
-        className || ""
-      }`}
+      className={`product-row-card-style-one w-full h-[250px] bg-white group relative overflow-hidden ${className || ""
+        }`}
     >
       <div className="flex space-x-5 items-center w-full h-full lg:p-[30px] sm:p-5 p-2">
         <div className="lg:w-1/2 w-1/3 h-full">
           <img
-            src={`/public/assets/images/${
-              datas.image
-            }`}
+            src={`/public/assets/images/${datas.image
+              }`}
             alt=""
             className="w-full h-full object-contain"
           />
@@ -46,7 +55,7 @@ export default function ProductCardRowStyleTwo({ className, datas, type }) {
                 {datas.offer_price}
               </span>
             </p>
-            <button type="button" className="w-[110px] h-[30px]"   onClick={() => addToCart(datas)}>
+            <button type="button" className="w-[110px] h-[30px]" onClick={() => addToCart(datas)}>
               <span className={type === 3 ? "blue-btn" : "yellow-btn"}>
                 {" "}
                 Add To Cart
@@ -62,16 +71,22 @@ export default function ProductCardRowStyleTwo({ className, datas, type }) {
             <QuickViewIco />
           </span>
         </a>
-        <a href="#">
+        <button
+          onClick={toggleWishlist}
+
+          title={isInWishlist(datas.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+        >
           <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-            <ThinLove />
+            <ThinLove filled={isInWishlist(datas.id)} className="w-6 h-18" />
           </span>
-        </a>
-        <a href="#">
-          <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-            <Compair />
-          </span>
-        </a>
+        </button>
+
+        
+     <button  onClick={() => addToCompare(datas)}>
+              <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
+                <Compair />
+              </span>
+            </button>
       </div>
     </div>
   );

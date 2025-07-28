@@ -57,14 +57,14 @@ export default function TopBar({ className }) {
                     <Arrow className="fill-current qblack" />
                   </div>
                 </div>
-                <div className="currency-select flex space-x-1 items-center">
+                {/* <div className="currency-select flex space-x-1 items-center">
                   <Selectbox className="w-fit" datas={["USD", "BDT"]} />
                   <Arrow className="fill-current qblack" />
-                </div>
-                <div className="language-select flex space-x-1 items-center">
+                </div> */}
+                {/* <div className="language-select flex space-x-1 items-center">
                   <Selectbox className="w-fit" datas={["Bangla", "english"]} />
                   <Arrow className="fill-current qblack" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

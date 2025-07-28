@@ -2,7 +2,8 @@
   {
     "id": "0001",
     "name": "Electronics",
-    "icon": "fa-mobile"
+    "icon": "fa-mobile",
+      "categoryId": "0001"
   },
   {
     "id": "0002",

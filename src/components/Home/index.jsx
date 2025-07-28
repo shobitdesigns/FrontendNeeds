@@ -56,13 +56,13 @@ export default function Home() {
         >
           <SectionStyleTwo key={products.id} products={products.slice(3, products.length)} />
         </ViewMoreTitle>
-        <ViewMoreTitle
+        {/* <ViewMoreTitle
           className="best-sallers-section mb-[60px]"
           seeMoreUrl="/sallers"
           categoryTitle="Best Saller"
         >
           <BestSellers />
-        </ViewMoreTitle>
+        </ViewMoreTitle> */}
         <ProductsAds
           ads={[
             `public/assets/images/bannera-1.png`,

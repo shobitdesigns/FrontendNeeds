@@ -4,7 +4,8 @@ import QuickViewIco from "../icons/QuickViewIco";
 import Star from "../icons/Star";
 import ThinLove from "../icons/ThinLove";
 import { useCart } from "../../Contexts/CartContext";
-import { useWishlist } from "../../Contexts/WishlistContext";
+import { useWishlist } from "../../Contexts/WishlistContext"
+import { useCompare } from "../../Contexts/AddToCompare";
 
 export default function ProductCardStyleOne({ datas, type }) {
   const available =
@@ -13,6 +14,7 @@ export default function ProductCardStyleOne({ datas, type }) {
     100;
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const {addToCompare} = useCompare();
 
   const toggleWishlist = () => {
     if (isInWishlist(datas.id)) {
@@ -130,14 +132,14 @@ export default function ProductCardStyleOne({ datas, type }) {
           title={isInWishlist(datas.id) ? "Remove from Wishlist" : "Add to Wishlist"}
         >
           <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
-            <ThinLove filled={isInWishlist(datas.id)} className="w-6 h-6" />
+            <ThinLove filled={isInWishlist(datas.id)} className="w-6 h-18" />
           </span>
         </button>
-        <a href="#">
+        <button  onClick={() => addToCompare(datas)}>
           <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
             <Compair />
           </span>
-        </a>
+        </button>
       </div>
     </div>
   );

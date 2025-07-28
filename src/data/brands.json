@@ -1,4 +1,76 @@
 [
-  { "id": "001", "name": "Samsung", "categoryId": "0001" },
-  { "id": "002", "name": "Nike", "categoryId": "0002" }
+  {
+    "id": "001",
+    "name": "oneplus",
+    "icon" : "brand-1.png",
+    "categoryId": "0001"
+  },
+  {
+    "id": "002",
+    "name": "tensent",
+     "icon" : "brand-2.png",
+    "categoryId": "0002"
+  },
+  {
+    "id": "003",
+    "name": "apple",
+     "icon" : "brand-3.png",
+    "categoryId": "0001"
+  },
+  {
+    "id": "004",
+    "name": "microsoft",
+     "icon" : "brand-4.png",
+    "categoryId": "0001"
+  },
+  {
+    "id": "005",
+    "name": "lenovo",
+      "icon" : "brand-5.png",
+    "categoryId": "0001"
+  },
+  {
+    "id": "006",
+    "name": "huawei",
+      "icon" : "brand-6.png",
+    "categoryId": "0001"
+  },
+  {
+    "id": "007",
+    "name": "nexus",
+        "icon" : "brand-7.png",
+    "categoryId": "0007"
+  },
+    {
+    "id": "008",
+    "name": "google",
+      "icon" : "brand-8.png",
+    "categoryId": "0008"
+  },
+    {
+    "id": "009",
+    "name": "firefox",
+      "icon" : "brand-9.png",
+    "categoryId": "0001"
+  },
+    {
+    "id": "0010",
+    "name": "tesla",
+      "icon" : "brand-10.png",
+    "categoryId": "00010"
+  }
+  ,
+    {
+    "id": "0011",
+    "name": "brave",
+      "icon" : "brand-11.png",
+    "categoryId": "00011"
+  }
+  ,
+    {
+    "id": "0012",
+    "name": "facebook",
+      "icon" : "brand-12.png",
+    "categoryId": "00012"
+  }
 ]

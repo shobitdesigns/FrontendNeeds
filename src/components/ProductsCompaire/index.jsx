@@ -2,8 +2,10 @@ import Star from "../Helpers/icons/Star";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
+import { useCompare } from "../Contexts/AddToCompare";
 
 export default function ProductsCompaire() {
+  const {compareList} = useCompare();
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="products-compaire-wrapper w-full bg-white pb-[40px]">

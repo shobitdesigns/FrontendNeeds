@@ -6,7 +6,7 @@ import TopBar from "./TopBar";
 import { useCart } from "../../../Contexts/CartContext";
 
 export default function HeaderOne({ className, drawerAction, type = 1 }) {
-  const {cartItems} = useCart();
+  const { cartItems } = useCart();
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       <TopBar className="quomodo-shop-top-bar" />
@@ -33,16 +33,17 @@ export default function HeaderOne({ className, drawerAction, type = 1 }) {
             </svg>
           </div>
           <div>
-        
-              <Link to="/">
-                <img
-                  width="152"
-                  height="36"
-                  src={`/public/assets/images/logo-3.svg`}
-                  alt="logo"
-                />
-              </Link>
-          
+
+            <Link to="/">
+              {/* <img
+                width="152"
+                height="36"
+                src={`/public/assets/images/logo.svg`}
+                alt="logo"
+              /> */}
+                   <h2 style={{ fontSize: 20, color: "#ffbb38", fontWeight:900 }} >Daily Needs</h2>
+            </Link>
+
           </div>
           <div className="cart relative cursor-pointer">
             <Link to="/cart">
@@ -50,13 +51,14 @@ export default function HeaderOne({ className, drawerAction, type = 1 }) {
                 <ThinBag />
               </span>
             </Link>
-            <span
-              className={`w-[18px] h-[18px] rounded-full  absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] ${
-                type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow text-qblack"
-              }`}
-            >
-             {cartItems.length}
-            </span>
+            {cartItems.length > 0 && (
+              <span
+                className={`w-[18px] h-[18px] rounded-full absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px] ${type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow"
+                  }`}
+              >
+                {cartItems.length}
+              </span>
+            )}
           </div>
         </div>
       </div>
