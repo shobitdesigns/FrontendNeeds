@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useState ,useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import categories from "../../data/categories.json";
+import brands from "../../data/brands.json"
 import productDatas from "../../data/products.json";
 import BreadcrumbCom from "../BreadcrumbCom";
 import ProductCardStyleOne from "../Helpers/Cards/ProductCardStyleOne";
@@ -7,41 +10,37 @@ import Layout from "../Partials/Layout";
 import ProductsFilter from "./ProductsFilter";
 
 export default function AllProductPage() {
-  const [filters, setFilter] = useState({
-    mobileLaptop: false,
-    gaming: false,
-    imageVideo: false,
-    vehicles: false,
-    furnitures: false,
-    sport: false,
-    foodDrinks: false,
-    fashion: false,
-    toilet: false,
-    makeupCorner: false,
-    babyItem: false,
-    apple: false,
-    samsung: false,
-    walton: false,
-    oneplus: false,
-    vivo: false,
-    oppo: false,
-    xiomi: false,
-    others: false,
-    sizeS: false,
-    sizeM: false,
-    sizeL: false,
-    sizeXL: false,
-    sizeXXL: false,
-    sizeFit: false,
-  });
+const [filters, setFilters] = useState({
+  brand: [],
+  category: [],
+});
 
-  const checkboxHandler = (e) => {
-    const { name } = e.target;
-    setFilter((prevState) => ({
-      ...prevState,
-      [name]: !prevState[name],
-    }));
-  };
+  const { search } = useLocation();
+const params = new URLSearchParams(search);
+const brand = params.get("brand");
+const category = params.get("category");
+const searchQuery = params.get("search");
+useEffect(() => {
+  const initialFilters = { brand: [], category: [] };
+
+  if (brand) initialFilters.brand.push(brand);
+  if (category) initialFilters.category.push(category);
+
+  setFilters(initialFilters);
+}, [brand, category]);
+
+const checkboxHandler = (type, value) => {
+  if (!filters[type]) return; // avoid error
+
+  setFilters((prevFilters) => {
+    const currentValues = prevFilters[type];
+    const newValues = currentValues.includes(value)
+      ? currentValues.filter((v) => v !== value)
+      : [...currentValues, value];
+
+    return { ...prevFilters, [type]: newValues };
+  });
+};
   const [volume, setVolume] = useState({ min: 200, max: 500 });
 
   const [storage, setStorage] = useState(null);
@@ -52,6 +51,24 @@ export default function AllProductPage() {
 
   const { products } = productDatas;
 
+
+const filteredProducts = products.filter((product) => {
+if (filters.category.length && !filters.category.includes(categoryName))
+  if (searchQuery && !product.title.toLowerCase().includes(searchQuery.toLowerCase())) {
+    return false;
+  }
+  if (filters.brand.length && !filters.brand.includes(product.brand)) {
+    return false;
+  }
+  const productCategory = brands.find(b => b.name === product.brand)?.categoryId;
+  const categoryName = categories.find(c => c.id === productCategory)?.name;
+  if (filters.category.length && !filters.category.includes(categoryName)) {
+    return false;
+  }
+
+  return true;
+});
+
   return (
     <>
       <Layout>
@@ -61,6 +78,8 @@ export default function AllProductPage() {
             <div className="w-full lg:flex lg:space-x-[30px]">
               <div className="lg:w-[270px]">
                 <ProductsFilter
+                brands={brands}
+                categories={categories}
                   filterToggle={filterToggle}
                   filterToggleHandler={() => setToggle(!filterToggle)}
                   filters={filters}
@@ -74,9 +93,7 @@ export default function AllProductPage() {
                 {/* ads */}
                 <div className="w-full hidden lg:block h-[295px]">
                   <img
-                    src={`${
-                      import.meta.env.VITE_PUBLIC_URL
-                    }/assets/images/bannera-5.png`}
+                    src={`public/assets/images/bannera-5.png`}
                     alt=""
                     className="w-full h-full object-contain"
                   />
@@ -132,7 +149,7 @@ export default function AllProductPage() {
                   </button>
                 </div>
                 <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1  xl:gap-[30px] gap-5 mb-[40px]">
-                  <DataIteration datas={products} startLength={0} endLength={6}>
+                <DataIteration datas={filteredProducts} startLength={0} endLength={6}>
                     {({ datas }) => (
                       <div data-aos="fade-up" key={datas.id}>
                         <ProductCardStyleOne datas={datas} />
@@ -143,16 +160,14 @@ export default function AllProductPage() {
 
                 <div className="w-full h-[164px] overflow-hidden mb-[40px]">
                   <img
-                    src={`${
-                      import.meta.env.VITE_PUBLIC_URL
-                    }/assets/images/bannera-6.png`}
+                    src={`public/assets/images/bannera-6.png`}
                     alt=""
                     className="w-full h-full object-contain"
                   />
                 </div>
                 <div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5 mb-[40px]">
                   <DataIteration
-                    datas={products}
+                    datas={filteredProducts}
                     startLength={6}
                     endLength={15}
                   >

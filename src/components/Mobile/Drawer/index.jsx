@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useWishlist } from "../../Contexts/WishlistContext";
 import { useCompare } from "../../Contexts/AddToCompare";
 import categories from "../../../data/categories.json"
+import SearchBox from "../../Helpers/SearchBox";
 
 export default function Drawer({ className, open, action }) {
   const [tab, setTab] = useState("category");
@@ -85,7 +86,7 @@ export default function Drawer({ className, open, action }) {
             </div>
           </div>
           <div className="w-full mt-5 px-5">
-            <div className="search-bar w-full h-[34px]  flex ">
+            {/* <div className="search-bar w-full h-[34px]  flex ">
               <div className="flex-1 bg-white h-full border border-r-0 border-[#E9E9E9]">
                 <input
                   type="text"
@@ -109,7 +110,8 @@ export default function Drawer({ className, open, action }) {
                   </svg>
                 </span>
               </div>
-            </div>
+            </div> */}
+            <SearchBox/>
           </div>
           <div className="w-full mt-5 px-5 flex items-center space-x-3">
             <span
