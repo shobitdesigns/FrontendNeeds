@@ -3,7 +3,7 @@
     {
       "id": "62aefe9ad8b80d5234af625a",
       "image": "product-img-1.jpg",
-      "brand": "xioami",
+      "brand": "oneplus",
       "review": 3,
       "title": "Xoggle aute et pariatur adipisicing nostrud et excepteur",
       "offer_price": "$18.73",
@@ -19,7 +19,7 @@
     {
       "id": "62aefe9a17780a9e549646c2",
       "image": "product-img-2.jpg",
-      "brand": "apple",
+      "brand": "oneplus",
       "review": 5,
       "title": "Geeky ipsum esse repreh est consequat",
       "offer_price": "$17.79",
@@ -35,7 +35,7 @@
     {
       "id": "62aefe9af9a0e865ee49c99e",
       "image": "product-img-3.jpg",
-      "brand": "apple",
+      "brand": "tensent",
       "review": 5,
       "title": "Conjurica ea magna eiusmod esse cupt anim aliquip",
       "offer_price": "$18.03",
@@ -51,7 +51,7 @@
     {
       "id": "62aefe9a6e662e77accd4cc4",
       "image": "product-img-4.jpg",
-      "brand": "google",
+      "brand": "oneplus",
       "review": 5,
       "title": "Senmei ipsum dolore eiusmod dolor officia do nisi",
       "offer_price": "$27.61",
@@ -65,7 +65,7 @@
     {
       "id": "62aefe9a9e1c4b69e47fa40f",
       "image": "product-img-5.jpg",
-      "brand": "xioami",
+      "brand": "microsoft",
       "review": 5,
       "title": "Canopoly duis voluptate dolor sunt sit adipisicing in",
       "offer_price": "$10.42",
@@ -79,7 +79,7 @@
     {
       "id": "62aefe9aa96283a41a9b46fc",
       "image": "product-img-6.jpg",
-      "brand": "xioami",
+      "brand": "lenovo",
       "review": 5,
       "title": "Unisure aliqua repreh ex cupt qui elit officia",
       "offer_price": "$16.43",
@@ -93,7 +93,7 @@
     {
       "id": "62aefe9aa2577bc8fa4ea7bc",
       "image": "product-img-7.jpg",
-      "brand": "xioami",
+      "brand": "huawei",
       "review": 5,
       "title": "Kenegy consectetur id ex nulla in adipisicing deserunt",
       "offer_price": "$11.92",
@@ -107,7 +107,7 @@
     {
       "id": "62aefe9aa117932437d0da93",
       "image": "product-img-8.jpg",
-      "brand": "samsung",
+      "brand": "nexus",
       "review": 5,
       "title": "Bizmatic consequat enim quis sit et est eiusmod",
       "offer_price": "$21.93",

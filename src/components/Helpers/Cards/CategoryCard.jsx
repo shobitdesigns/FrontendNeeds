@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-
-export default function CategoryCard({ background, title, brands = [] }) {
+export default function CategoryCard({ background, title, brands = [],
+  onBrandClick,
+  selectedBrand, }) {
   return (
     <div
       className="category-card-wrappwer w-full h-full p-[30px]"
       style={{
-        background: `url(${
-          background ||
+        background: `url(${background ||
           `public/assets/images/section-category-1.jpg`
-        }) no-repeat`,
+          }) no-repeat`,
         backgroundSize: "cover",
       }}
     >
@@ -16,15 +16,19 @@ export default function CategoryCard({ background, title, brands = [] }) {
         <h1 className="text-base font-600 tracking-wide mb-2">{title}</h1>
         <div className="brands-list mb-[7px]">
           <ul>
-            {brands.map((brand) => (
-              <li key={brand + Math.random()}>
-                <Link to="/all-products">
-                  <span className="text-sm text-qgray hober:text-qBlack border-b border-transparent hover:border-qblack hover:text-qblack capitalize">
-                    {brand}
-                  </span>
-                </Link>
-              </li>
-            ))}
+         {brands.map((brand) => (
+  <li key={brand.id}>
+    <button onClick={() => onBrandClick(brand.name)}>
+      <span
+        className={`text-sm capitalize text-qgray hover:text-qblack border-b-2 transition-all duration-200 ${
+          selectedBrand === brand.name ? "border-qblack text-sm text-qblack font-bold " : "border-transparent"
+        }`}
+      >
+        {brand.name}
+      </span>
+    </button>
+  </li>
+))}
           </ul>
         </div>
         <a href="#">

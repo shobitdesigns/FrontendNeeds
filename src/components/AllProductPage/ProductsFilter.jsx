@@ -42,7 +42,7 @@ export default function ProductsFilter({
           id={category.id}
           name={category.id}
           handleChange={(e) => checkboxHandler(e)}
-          checked={filters[category.id]}
+          checked={filters.brand.includes(brands.name)}
         />
       </div>
       <div>

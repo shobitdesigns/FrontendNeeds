@@ -69,6 +69,7 @@ if (filters.category.length && !filters.category.includes(categoryName))
   return true;
 });
 
+
   return (
     <>
       <Layout>

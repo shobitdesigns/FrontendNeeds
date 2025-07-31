@@ -6,7 +6,8 @@ import SectionStyleThree from "../Helpers/SectionStyleThree";
 import SectionStyleTwo from "../Helpers/SectionStyleTwo";
 import ViewMoreTitle from "../Helpers/ViewMoreTitle";
 import Layout from "../Partials/Layout";
-// import Ads from "./Ads";
+import categories from "../../data/categories.json";
+import brands from "../../data/brands.json";
 import Banner from "./Banner";
 import BestSellers from "./BestSellers";
 import BrandSection from "./BrandSection";
@@ -15,18 +16,8 @@ import ProductsAds from "./ProductsAds";
 
 export default function Home() {
   const { products } = datas;
-  const brands = [];
-  products.forEach((product) => {
-    brands.push(product.brand);
-  });
-  // const [ads, setAds] = useState(false);
-  // const adsHandle = () => {
-  //   setAds(false);
-  // };
-  // useEffect(() => gs
-  // {
-  //   setAds(true);
-  // }, []);
+  const fixedCategoryId1 = "0001";
+  const fixedCategoryId2 = "0002";
   return (
     <>
       <Layout>
@@ -35,9 +26,10 @@ export default function Home() {
         <Banner className="banner-wrapper mb-[60px]" />
         <SectionStyleOne
           products={products}
+          categories={categories}
           brands={brands}
-          categoryTitle="Mobile & Tablet"
           sectionTitle="Gamer World"
+          fixedCategoryId={fixedCategoryId1}
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />
@@ -75,8 +67,11 @@ export default function Home() {
           categoryBackground={`/public/assets/images/section-category-2.jpg`}
           products={products.slice(4, products.length)}
           brands={brands}
-          categoryTitle="Electronics"
+          categories={categories}
+          fixedCategoryId={fixedCategoryId2}
+          // categoryTitle="Electronics"
           sectionTitle="Popular Sales"
+
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />

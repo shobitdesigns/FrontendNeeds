@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CategoryCard from "./Cards/CategoryCard";
 import ProductCardStyleOne from "./Cards/ProductCardStyleOne";
 import DataIteration from "./DataIteration";
@@ -6,17 +6,53 @@ import ViewMoreTitle from "./ViewMoreTitle";
 
 export default function SectionStyleOne({
   className,
-  categoryTitle,
   sectionTitle,
   seeMoreUrl,
+  fixedCategoryId,
+  categories = [],
   brands = [],
   products = [],
   categoryBackground,
 }) {
-  const filterBrands = brands.filter(
-    (value, index, array) => array.indexOf(value) === index
+  const filterBrandsByCategory = (categoryId) => {
+    return brands.filter((brand) => brand.categoryId === categoryId);
+  };
+  const [selectedBrand, setSelectedBrand] = useState(null);
+
+  const [filteredProducts, setFilteredProducts] = useState(
+    products.filter((p) => {
+      const brand = brands.find((b) => b.name === p.brand);
+      return brand?.categoryId === fixedCategoryId;
+    })
   );
+  const handleBrandClick = (brandName) => {
+    const filtered = products.filter((product) => product.brand === brandName);
+    setFilteredProducts(filtered);
+    setSelectedBrand(brandName);
+  };
   const [productLength] = useState(3);
+ useEffect(() => {
+  if (brands.length > 0 && products.length > 0) {
+    const categoryBrands = brands.filter(
+      (brand) => brand.categoryId === fixedCategoryId
+    );
+
+    if (categoryBrands.length > 0) {
+      const firstBrandName = categoryBrands[0].name;
+      const filtered = products.filter((product) => {
+        const brand = brands.find((b) => b.name === product.brand);
+        return (
+          product.brand === firstBrandName &&
+          brand?.categoryId === fixedCategoryId
+        );
+      });
+
+      setFilteredProducts(filtered);
+      setSelectedBrand(firstBrandName);
+    }
+  }
+}, [brands, products, fixedCategoryId]);
+
   // useEffect(() => {
   //   if (window.matchMedia("(max-width: 1024px)")) {
   //     setLength(2);
@@ -30,12 +66,15 @@ export default function SectionStyleOne({
             <div className="category-card hidden xl:block w-full">
               <CategoryCard
                 background={categoryBackground}
-                title={categoryTitle}
-                brands={filterBrands}
+                title={categories.find((cat) => cat.id === fixedCategoryId)?.name || ""}
+                filterproducts={filteredProducts}
+                brands={filterBrandsByCategory(fixedCategoryId)}
+                onBrandClick={handleBrandClick}
+                selectedBrand={selectedBrand}
               />
             </div>
             <DataIteration
-              datas={products}
+              datas={filteredProducts}
               startLength={0}
               endLength={productLength}
             >

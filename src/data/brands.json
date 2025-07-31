@@ -9,7 +9,7 @@
     "id": "002",
     "name": "tensent",
      "icon" : "brand-2.png",
-    "categoryId": "0002"
+    "categoryId": "0001"
   },
   {
     "id": "003",
@@ -39,38 +39,38 @@
     "id": "007",
     "name": "nexus",
         "icon" : "brand-7.png",
-    "categoryId": "0007"
+    "categoryId": "0002"
   },
     {
     "id": "008",
     "name": "google",
       "icon" : "brand-8.png",
-    "categoryId": "0008"
+    "categoryId": "0002"
   },
     {
     "id": "009",
     "name": "firefox",
       "icon" : "brand-9.png",
-    "categoryId": "0001"
+    "categoryId": "0002"
   },
     {
     "id": "0010",
     "name": "tesla",
       "icon" : "brand-10.png",
-    "categoryId": "00010"
+    "categoryId": "0002"
   }
   ,
     {
     "id": "0011",
     "name": "brave",
       "icon" : "brand-11.png",
-    "categoryId": "00011"
+    "categoryId": "0002"
   }
   ,
     {
     "id": "0012",
     "name": "facebook",
       "icon" : "brand-12.png",
-    "categoryId": "00012"
+    "categoryId": "0002"
   }
 ]
