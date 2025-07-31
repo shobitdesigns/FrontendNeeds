@@ -6,10 +6,6 @@ const WishlistContext = createContext();
 export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
 
-  // const addToWishlist = (product) => {
-  //   const exists = wishlist.find((item) => item.id === product.id);
-  //   if (!exists) setWishlist([...wishlist, product]);
-  // };
   const addToWishlist = (product) => {
   const exists = wishlist.find((item) => item.id === product.id);
   if (!exists) {
