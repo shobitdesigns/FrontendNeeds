@@ -8,5 +8,10 @@
     "id": "0002",
     "name": "Clothing",
     "icon": "fa-shirt"
+  },
+    {
+    "id": "0003",
+    "name": "Grocery",
+    "icon": "fa-bucket"
   }
 ]

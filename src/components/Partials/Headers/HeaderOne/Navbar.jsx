@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Arrow from "../../../Helpers/icons/Arrow";
-import categories from "../../../../data/categories.json"
+import categories from "../../../../data/categories.json";
+import brands from "../../../../data/brands.json";
+import DataIteration from "../../../Helpers/DataIteration";
 export default function Navbar({ className, type }) {
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
+  const [menulength] = useState(5)
   // const getItems = document.querySelectorAll(`.categories-list li`).length;
   // if (categoryToggle && getItems > 0) {
   //   setSize(`${40 * getItems}px`);
@@ -25,9 +28,8 @@ export default function Navbar({ className, type }) {
 
   return (
     <div
-      className={`nav-widget-wrapper w-full  h-[60px] relative z-30 ${
-        type === 3 ? "bg-qh3-blue" : "bg-qyellow"
-      }  ${className || ""}`}
+      className={`nav-widget-wrapper w-full  h-[60px] relative z-30 ${type === 3 ? "bg-qh3-blue" : "bg-qyellow"
+        }  ${className || ""}`}
     >
       <div className="container-x mx-auto h-full">
         <div className="w-full h-full relative">
@@ -77,57 +79,56 @@ export default function Navbar({ className, type }) {
                   style={{ height: `${elementsSize} ` }}
                 >
                   <ul className="categories-list">
-                
-                   {categories.map((item) => (
-                 <li className="category-item">
-                      <Link to="/all-products">
-                        <div
-                          className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${
-                            type === 3
+
+                    {categories.map((item) => (
+                      <li className="category-item">
+                        <Link to="/all-products">
+                          <div
+                            className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
                               : "hover:bg-qyellow"
-                          }`}
-                        >
-                          <div className="flex items-center space-x-6">
-                            <span>
-                      
-                            <i className={`fas fa-solid ${item.icon}`}></i>
-                            </span>
-                            <span className="text-xs font-400">
-                             {item.name}
-                            </span>
+                              }`}
+                          >
+                            <div className="flex items-center space-x-6">
+                              <span>
+
+                                <i className={`fas fa-solid ${item.icon}`}></i>
+                              </span>
+                              <span className="text-xs font-400">
+                                {item.name}
+                              </span>
+                            </div>
+                            <div>
+                              <span>
+                                <svg
+                                  className="fill-current"
+                                  width="6"
+                                  height="9"
+                                  viewBox="0 0 6 9"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <rect
+                                    x="1.49805"
+                                    y="0.818359"
+                                    width="5.78538"
+                                    height="1.28564"
+                                    transform="rotate(45 1.49805 0.818359)"
+                                  />
+                                  <rect
+                                    x="5.58984"
+                                    y="4.90918"
+                                    width="5.78538"
+                                    height="1.28564"
+                                    transform="rotate(135 5.58984 4.90918)"
+                                  />
+                                </svg>
+                              </span>
+                            </div>
                           </div>
-                          <div>
-                            <span>
-                              <svg
-                                className="fill-current"
-                                width="6"
-                                height="9"
-                                viewBox="0 0 6 9"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                              >
-                                <rect
-                                  x="1.49805"
-                                  y="0.818359"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(45 1.49805 0.818359)"
-                                />
-                                <rect
-                                  x="5.58984"
-                                  y="4.90918"
-                                  width="5.78538"
-                                  height="1.28564"
-                                  transform="rotate(135 5.58984 4.90918)"
-                                />
-                              </svg>
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
-            ))}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -135,14 +136,14 @@ export default function Navbar({ className, type }) {
                 <ul className="nav-wrapper flex xl:space-x-10 space-x-5">
                   <li className="relative">
                     <Link to="/">
-                    <span
-                      className={`flex items-center text-sm font-600 cursor-pointer 
+                      <span
+                        className={`flex items-center text-sm font-600 cursor-pointer 
                         text-qblacktext
                       `}
-                    >
-                      <span>Home</span>
-                   
-                    </span>
+                      >
+                        <span>Home</span>
+
+                      </span>
                     </Link>
                   </li>
                   <li>
@@ -150,7 +151,7 @@ export default function Navbar({ className, type }) {
                       className={`flex items-center text-sm font-600 cursor-pointer text-qblacktext"
                       `}
                     >
-                      <span>Bestsellers</span>
+                      <span>Show now</span>
                       <span className="ml-1.5 ">
                         <Arrow className="fill-current" />
                       </span>
@@ -167,129 +168,23 @@ export default function Navbar({ className, type }) {
                           <div>
                             <div className="category">
                               <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
-                                Shop List
+                                Top Brands
                               </h1>
                             </div>
                             <div className="category-items">
                               <ul className="flex flex-col space-y-2">
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent 
-                                       hover:text-qyellow hover:border-qyellow
-                                      `}
-                                    >
-                                      Shop Sidebar
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent  
-                                          hover:text-qyellow hover:border-qyellow
-                                      `}
-                                    >
-                                      Shop Fullwidth
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent
-                                          hover:text-qyellow hover:border-qyellow
-                                      `}
-                                    >
-                                      Shop Category Icon
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow`}
-                                    >
-                                      Shop Category Icon
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Shop List View
-                                    </span>
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div>
-                            <div className="category">
-                              <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
-                                Product Layouts
-                              </h1>
-                            </div>
-                            <div className="category-items">
-                              <ul className="flex flex-col space-y-2">
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Horizonral Thumbnail
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Vertical Thumbnail
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Gallery Thumbnail
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Sticky Summary
-                                    </span>
-                                  </Link>
-                                </li>
+
+                                {brands.slice(0, menulength).map((brand) => (
+                                  <li key={brand.id}>
+                                    <Link to="/all-products">
+                                      <span className="text-qgray text-sm font-400 border-b border-transparent 
+                       hover:text-qyellow hover:border-qyellow">
+                                        {brand.name}
+                                      </span>
+                                    </Link>
+                                  </li>
+                                ))}
+
                               </ul>
                             </div>
                           </div>
@@ -301,58 +196,41 @@ export default function Navbar({ className, type }) {
                             </div>
                             <div className="category-items">
                               <ul className="flex flex-col space-y-2">
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Phone & Tablet
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Gaming & Sports
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Home Appliance
-                                    </span>
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link to="/all-products">
-                                    <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
-                                    >
-                                      Fashion Clothes
-                                    </span>
-                                  </Link>
-                                </li>
+                                {categories.slice(0, menulength).map((category) => (
+                                  <li key={category.id}>
+                                    <Link to="/all-products">
+                                      <span className="text-qgray text-sm font-400 border-b border-transparent 
+                       hover:text-qyellow hover:border-qyellow">
+                                        {category.name}
+                                      </span>
+                                    </Link>
+                                  </li>
+                                ))}
+
+
+                              </ul>
+                            </div>
+                          </div>
+                          <div>
+                            <div className="category">
+                              <h1 className="text-[13px] font-700 text-qblack uppercase mb-[13px]">
+                                Best Sellers
+                              </h1>
+                            </div>
+                            <div className="category-items">
+                              <ul className="flex flex-col space-y-2">
+                                {[...brands]
+                                  .sort(() => 0.5 - Math.random())
+                                  .slice(0, menulength)
+                                  .map((brand) => (
+                                    <li key={brand.id}>
+                                      <Link to="/all-products">
+                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow">
+                                          {brand.name}
+                                        </span>
+                                      </Link>
+                                    </li>
+                                  ))}
                               </ul>
                             </div>
                           </div>
@@ -370,11 +248,10 @@ export default function Navbar({ className, type }) {
                       </div>
                     </div>
                   </li>
-                  <li className="relative">
+                  {/* <li className="relative">
                     <span
-                      className={`flex items-center text-sm font-600 cursor-pointer ${
-                        type === 3 ? "text-white" : "text-qblacktext"
-                      }`}
+                      className={`flex items-center text-sm font-600 cursor-pointer ${type === 3 ? "text-white" : "text-qblacktext"
+                        }`}
                     >
                       <span>Pages</span>
                       <span className="ml-1.5 ">
@@ -395,11 +272,10 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/privacy-policy">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qyellow hover:border-qyellow"
+                                        }`}
                                     >
                                       Privacy Policy
                                     </span>
@@ -408,11 +284,10 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/terms-condition">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qyellow hover:border-qyellow"
+                                        }`}
                                     >
                                       Terms and Conditions
                                     </span>
@@ -421,11 +296,10 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/faq">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qyellow hover:border-qyellow"
+                                        }`}
                                     >
                                       FAQ
                                     </span>
@@ -434,11 +308,10 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/all-products">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qyellow hover:border-qyellow"
+                                        }`}
                                     >
                                       Shop Category Icon
                                     </span>
@@ -447,11 +320,10 @@ export default function Navbar({ className, type }) {
                                 <li>
                                   <Link to="/all-products">
                                     <span
-                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
-                                        type === 3
-                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
-                                          : "hover:text-qyellow hover:border-qyellow"
-                                      }`}
+                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${type === 3
+                                        ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                        : "hover:text-qyellow hover:border-qyellow"
+                                        }`}
                                     >
                                       Shop List View
                                     </span>
@@ -463,13 +335,12 @@ export default function Navbar({ className, type }) {
                         </div>
                       </div>
                     </div>
-                  </li>
+                  </li> */}
                   <li>
                     <Link to="/about">
                       <span
-                        className={`flex items-center text-sm font-600 cursor-pointer ${
-                          type === 3 ? "text-white" : "text-qblacktext"
-                        }`}
+                        className={`flex items-center text-sm font-600 cursor-pointer ${type === 3 ? "text-white" : "text-qblacktext"
+                          }`}
                       >
                         <span>About</span>
                       </span>
@@ -478,9 +349,8 @@ export default function Navbar({ className, type }) {
                   <li>
                     <Link to="/blogs">
                       <span
-                        className={`flex items-center text-sm font-600 cursor-pointer ${
-                          type === 3 ? "text-white" : "text-qblacktext"
-                        }`}
+                        className={`flex items-center text-sm font-600 cursor-pointer ${type === 3 ? "text-white" : "text-qblacktext"
+                          }`}
                       >
                         <span>Blog</span>
                       </span>
@@ -489,9 +359,8 @@ export default function Navbar({ className, type }) {
                   <li>
                     <Link to="/contact">
                       <span
-                        className={`flex items-center text-sm font-600 cursor-pointer ${
-                          type === 3 ? "text-white" : "text-qblacktext"
-                        }`}
+                        className={`flex items-center text-sm font-600 cursor-pointer ${type === 3 ? "text-white" : "text-qblacktext"
+                          }`}
                       >
                         <span>Contact</span>
                       </span>

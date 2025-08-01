@@ -2,75 +2,109 @@
   {
     "id": "001",
     "name": "oneplus",
-    "icon" : "brand-1.png",
+    "icon": "brand-1.png",
     "categoryId": "0001"
   },
   {
     "id": "002",
     "name": "tensent",
-     "icon" : "brand-2.png",
+    "icon": "brand-2.png",
     "categoryId": "0001"
   },
   {
     "id": "003",
     "name": "apple",
-     "icon" : "brand-3.png",
+    "icon": "brand-3.png",
     "categoryId": "0001"
   },
   {
     "id": "004",
     "name": "microsoft",
-     "icon" : "brand-4.png",
+    "icon": "brand-4.png",
     "categoryId": "0001"
   },
   {
     "id": "005",
     "name": "lenovo",
-      "icon" : "brand-5.png",
+    "icon": "brand-5.png",
     "categoryId": "0001"
   },
   {
     "id": "006",
     "name": "huawei",
-      "icon" : "brand-6.png",
+    "icon": "brand-6.png",
     "categoryId": "0001"
   },
   {
     "id": "007",
     "name": "nexus",
-        "icon" : "brand-7.png",
+    "icon": "brand-7.png",
     "categoryId": "0002"
   },
-    {
+  {
     "id": "008",
     "name": "google",
-      "icon" : "brand-8.png",
+    "icon": "brand-8.png",
     "categoryId": "0002"
   },
-    {
+  {
     "id": "009",
     "name": "firefox",
-      "icon" : "brand-9.png",
+    "icon": "brand-9.png",
     "categoryId": "0002"
   },
-    {
+  {
     "id": "0010",
     "name": "tesla",
-      "icon" : "brand-10.png",
+    "icon": "brand-10.png",
     "categoryId": "0002"
-  }
-  ,
-    {
+  },
+  {
     "id": "0011",
     "name": "brave",
-      "icon" : "brand-11.png",
+    "icon": "brand-11.png",
     "categoryId": "0002"
-  }
-  ,
-    {
+  },
+  {
     "id": "0012",
     "name": "facebook",
-      "icon" : "brand-12.png",
+    "icon": "brand-12.png",
     "categoryId": "0002"
+  },
+  {
+    "id": "0013",
+    "name": "Dabur",
+    "icon": "brand-13.png",
+    "categoryId": "0003"
+  },
+  {
+    "id": "0014",
+    "name": "Britannia",
+    "icon": "brand-14.png",
+    "categoryId": "0003"
+  },
+  {
+    "id": "0015",
+    "name": "Vadilal",
+    "icon": "brand-15.png",
+    "categoryId": "0003"
+  },
+  {
+    "id": "0016",
+    "name": "Amul",
+    "icon": "brand-16.png",
+    "categoryId": "0003"
+  },
+  {
+    "id": "0017",
+    "name": "Nestle",
+    "icon": "brand-17.png",
+    "categoryId": "0003"
+  },
+    {
+    "id": "0018",
+    "name": "Thumsup",
+    "icon": "brand-18.png",
+    "categoryId": "0003"
   }
 ]

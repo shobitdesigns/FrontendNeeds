@@ -29,7 +29,7 @@ export default function ProductCardStyleOne({ datas, type }) {
       style={{ boxShadow: "0px 15px 64px 0px rgba(0, 0, 0, 0.05)" }}
     >
       <div
-        className="product-card-img w-full h-[300px]"
+        className="product-card-img w-full h-[300px] object-fit"
         style={{
           background: `url(public/assets/images/${datas.image
             }) no-repeat center`,

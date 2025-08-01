@@ -4,12 +4,15 @@ import Middlebar from "./Middlebar";
 import Navbar from "./Navbar";
 import TopBar from "./TopBar";
 import { useCart } from "../../../Contexts/CartContext";
+import Marquee from "./Marquee";
 
 export default function HeaderOne({ className, drawerAction, type = 1 }) {
   const { cartItems } = useCart();
+  const marquee ="  🎉 Big Sale Alert! Up to 50% OFF on selected items – Limited Time Offer! 🛍️ | Free Shipping on Orders Over ₹999 🚚 | Hurry – While Stocks Last! ⏳"
   return (
     <header className={` ${className || ""} header-section-wrapper relative`}>
       <TopBar className="quomodo-shop-top-bar" />
+      <Marquee text={Marquee}/>
       <Middlebar
         type={type}
         className="quomodo-shop-middle-bar lg:block hidden"

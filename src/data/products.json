@@ -397,6 +397,50 @@
       "cam_product_sale": 10,
       "product_type": null,
      "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
+    },
+        {
+      "id": "10",
+      "image": "product-img-29.png",
+      "brand": "Dabur",
+      "review": 5,
+      "title": "Callflex dolore eiusmod voluptate proident aute incididunt anim",
+      "offer_price": "$18.74",
+      "price": "$34.99",
+      "campaingn_product": true,
+      "cam_product_available": 18,
+      "cam_product_sale": 10,
+      "product_type": null,
+     "related_images": ["product-img-29.jpg"]
+    }
+    ,
+        {
+      "id": "11",
+      "image": "product-img-30.png",
+     "brand": "Dabur",
+      "review": 5,
+      "title": "Callflex dolore eiusmod voluptate proident aute incididunt anim",
+      "offer_price": "$18.74",
+      "price": "$34.99",
+      "campaingn_product": true,
+      "cam_product_available": 18,
+      "cam_product_sale": 10,
+      "product_type": null,
+     "related_images": ["product-img-30.jpg"]
+    }
+    ,
+        {
+      "id": "12",
+      "image": "product-img-31.png",
+     "brand": "Dabur",
+      "review": 5,
+      "title": "Callflex dolore eiusmod voluptate proident aute incididunt anim",
+      "offer_price": "$18.74",
+      "price": "$34.99",
+      "campaingn_product": true,
+      "cam_product_available": 18,
+      "cam_product_sale": 10,
+      "product_type": null,
+     "related_images": ["product-img-31.jpg"]
     }
   ]
 }

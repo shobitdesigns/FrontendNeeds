@@ -17,7 +17,12 @@ import ProductsAds from "./ProductsAds";
 export default function Home() {
   const { products } = datas;
   const fixedCategoryId1 = "0001";
-  const fixedCategoryId2 = "0002";
+  const fixedCategoryId2 = "0003";
+const groceryHeading = (
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 text-center mb-6">
+    Bite Into <span className="text-orange-600">Freshness</span> – Delivered Daily.
+  </h2>
+);
   return (
     <>
       <Layout>
@@ -64,13 +69,13 @@ export default function Home() {
           className="products-ads-section mb-[60px]"
         />
         <SectionStyleOne
-          categoryBackground={`/public/assets/images/section-category-2.jpg`}
+          categoryBackground={`/public/assets/images/section-category.png`}
           products={products.slice(4, products.length)}
           brands={brands}
           categories={categories}
           fixedCategoryId={fixedCategoryId2}
           // categoryTitle="Electronics"
-          sectionTitle="Popular Sales"
+          sectionTitle={groceryHeading}
 
           seeMoreUrl="/all-products"
           className="category-products mb-[60px]"

@@ -16,19 +16,18 @@ export default function CategoryCard({ background, title, brands = [],
         <h1 className="text-base font-600 tracking-wide mb-2">{title}</h1>
         <div className="brands-list mb-[7px]">
           <ul>
-         {brands.map((brand) => (
-  <li key={brand.id}>
-    <button onClick={() => onBrandClick(brand.name)}>
-      <span
-        className={`text-sm capitalize text-qgray hover:text-qblack border-b-2 transition-all duration-200 ${
-          selectedBrand === brand.name ? "border-qblack text-sm text-qblack font-bold " : "border-transparent"
-        }`}
-      >
-        {brand.name}
-      </span>
-    </button>
-  </li>
-))}
+            {brands.map((brand) => (
+              <li key={brand.id}>
+                <button onClick={() => onBrandClick(brand.name)}>
+                  <span
+                    className={`text-sm capitalize text-qgray hover:text-qblack border-b-2 transition-all duration-200 ${selectedBrand === brand.name ? "border-qblack text-sm text-qblack font-bold " : "border-transparent"
+                      }`}
+                  >
+                    {brand.name}
+                  </span>
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
         <a href="#">
