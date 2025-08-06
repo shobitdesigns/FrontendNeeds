@@ -66,9 +66,7 @@ export default function About() {
             <div className="w-full min-h-[665px] lg:flex lg:space-x-12 items-center pb-10 lg:pb-0">
               <div className="md:w-[570px] w-full md:h-[560px] h-auto rounded overflow-hidden my-5 lg:my-0">
                 <img
-                  src={`${
-                    import.meta.env.VITE_PUBLIC_URL
-                  }/assets/images/about-banner.png`}
+                  src={`/public/assets/images/about-banner.png`}
                   alt="about"
                   className="w-full h"
                 />
@@ -140,9 +138,7 @@ export default function About() {
                   <div className="flex items-center space-x-2.5 mt-3">
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
                       <img
-                        src={`${
-                          import.meta.env.VITE_PUBLIC_URL
-                        }/assets/images/comment-user-1.png`}
+                        src={`public/assets/images/comment-user-1.png`}
                         alt="user"
                       />
                     </div>

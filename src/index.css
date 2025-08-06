@@ -371,7 +371,7 @@ body {
   white-space: nowrap;
   background-color: #fff7cc;
   color: #000;
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 1rem;
   font-weight: 500;
   position: relative;

@@ -2,13 +2,26 @@ import { useState, useEffect } from "react";
 import Star from "../Helpers/icons/Star";
 import Selectbox from "../Helpers/Selectbox";
 import { useCart } from "../Contexts/CartContext";
+import { useWishlist } from "../Contexts/WishlistContext";
+import ThinLove from "../Helpers/icons/ThinLove";
+import brands from "../../data/brands.json";
+import categories from "../../data/categories.json";
 import InputQuantityCom from "../Helpers/InputQuantityCom";
+import { data } from "autoprefixer";
 
 export default function ProductView({ className, reportHandler, product }) {
+  const brand = brands.find((b) => b.name === product.brand);
+ const category = categories.find((c) => c.id === brand?.categoryId);
   const productsImg = product.related_images || [];
-
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const [src, setSrc] = useState(productsImg[0] || "");
-
+  const toggleWishlist = () => {
+    if (isInWishlist(product.id)) {
+      removeFromWishlist(product.id);
+    } else {
+      addToWishlist(product);
+    }
+  };
   const changeImgHandler = (current) => {
     setSrc(current);
   };
@@ -210,23 +223,13 @@ export default function ProductView({ className, reportHandler, product }) {
               </div>
             </div>
             <div className="w-[60px] h-full flex justify-center items-center border border-qgray-border">
-              <button type="button">
-                <span>
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M17 1C14.9 1 13.1 2.1 12 3.7C10.9 2.1 9.1 1 7 1C3.7 1 1 3.7 1 7C1 13 12 22 12 22C12 22 23 13 23 7C23 3.7 20.3 1 17 1Z"
-                      stroke="#D5D5D5"
-                      strokeWidth="2"
-                      strokeMiterlimit="10"
-                      strokeLinecap="square"
-                    />
-                  </svg>
+              <button
+                onClick={toggleWishlist}
+
+                title={isInWishlist(product.id) ? "Remove from Wishlist" : "Add to Wishlist"}
+              >
+                <span className="w-10 h-10 flex justify-center items-center bg-primarygray rounded">
+                  <ThinLove filled={isInWishlist(product.id)} className="w-6 h-18" />
                 </span>
               </button>
             </div>
@@ -239,7 +242,7 @@ export default function ProductView({ className, reportHandler, product }) {
 
           <div data-aos="fade-up" className="mb-[20px]">
             <p className="text-[13px] text-qgray leading-7">
-              <span className="text-qblack">Category :</span> Kitchen
+              <span className="text-qblack">Category :</span> {category?.name|| unknown}
             </p>
             <p className="text-[13px] text-qgray leading-7">
               <span className="text-qblack">Tags :</span> Beer, Foamer

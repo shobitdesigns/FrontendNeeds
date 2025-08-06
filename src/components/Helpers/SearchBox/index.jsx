@@ -113,7 +113,6 @@ const handleSelect = (item) => {
                     </div>
                     <div className="w-[86%]  flex items-start">
                       <div className="text-[#222222] text-[13px]">{item.label}</div>
-                      {/* <div className="text-xs text-gray-400">({item.type})</div> */}
                     </div>
                     </div>
                   </li>
@@ -122,9 +121,6 @@ const handleSelect = (item) => {
                 <li className="px-4 py-2 text-gray-400 text-sm">No suggestions found.</li>
               )}
             </ul>
-
-
-
           )}
         </div>
 
@@ -133,9 +129,16 @@ const handleSelect = (item) => {
         <button
           className={`w-[93px] h-full text-sm font-600 bg-yellow search-btn `}
           type="button"
+           onClick={() => {
+    if (query.trim()) {
+      navigate(`/all-products?search=${encodeURIComponent(query.trim())}`);
+      setShowSuggestions(false);
+    }
+  }}
         >
           Search
         </button>
+        
       </div>
     </>
   );

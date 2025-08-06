@@ -31,7 +31,7 @@ export default function ProductCardStyleOne({ datas, type }) {
       <div
         className="product-card-img w-full h-[300px] object-fit"
         style={{
-          background: `url(public/assets/images/${datas.image
+          background: `url(/assets/images/${datas.image
             }) no-repeat center`,
         }}
       >

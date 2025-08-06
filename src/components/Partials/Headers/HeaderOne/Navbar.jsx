@@ -4,6 +4,7 @@ import Arrow from "../../../Helpers/icons/Arrow";
 import categories from "../../../../data/categories.json";
 import brands from "../../../../data/brands.json";
 import DataIteration from "../../../Helpers/DataIteration";
+import { useNavigate } from "react-router-dom";
 export default function Navbar({ className, type }) {
   const [categoryToggle, setToggle] = useState(false);
   const [elementsSize, setSize] = useState("0px");
@@ -82,7 +83,7 @@ export default function Navbar({ className, type }) {
 
                     {categories.map((item) => (
                       <li className="category-item">
-                        <Link to="/all-products">
+                        <Link to={`/all-products?category=${encodeURIComponent(item.name)}`}>
                           <div
                             className={`flex justify-between items-center px-5 h-10 bg-white  transition-all duration-300 ease-in-out cursor-pointer text-qblack ${type === 3
                               ? "hover:bg-qh3-blue hover:text-white"
@@ -176,7 +177,7 @@ export default function Navbar({ className, type }) {
 
                                 {brands.slice(0, menulength).map((brand) => (
                                   <li key={brand.id}>
-                                    <Link to="/all-products">
+                                    <Link to={`/all-products/${brand.name}`}>
                                       <span className="text-qgray text-sm font-400 border-b border-transparent 
                        hover:text-qyellow hover:border-qyellow">
                                         {brand.name}
@@ -225,7 +226,8 @@ export default function Navbar({ className, type }) {
                                   .map((brand) => (
                                     <li key={brand.id}>
                                       <Link to="/all-products">
-                                        <span className="text-qgray text-sm font-400 border-b border-transparent hover:text-qyellow hover:border-qyellow">
+                                        <span className="cursor-pointer text-qgray text-sm font-400 border-b border-transparent 
+                                        hover:text-qyellow hover:border-qyellow">
                                           {brand.name}
                                         </span>
                                       </Link>

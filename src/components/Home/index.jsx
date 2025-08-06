@@ -18,11 +18,11 @@ export default function Home() {
   const { products } = datas;
   const fixedCategoryId1 = "0001";
   const fixedCategoryId2 = "0003";
-const groceryHeading = (
-  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 text-center mb-6">
-    Bite Into <span className="text-orange-600">Freshness</span> – Delivered Daily.
-  </h2>
-);
+  const groceryHeading = (
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 text-center mb-6">
+      Bite Into <span className="text-orange-600">Freshness</span> – Delivered Daily.
+    </h2>
+  );
   return (
     <>
       <Layout>
@@ -34,8 +34,8 @@ const groceryHeading = (
           categories={categories}
           brands={brands}
           sectionTitle="Gamer World"
+          seeMoreUrl={`/all-products?category=${encodeURIComponent(categories.find(cat => cat.id === fixedCategoryId1)?.name || "")}`}
           fixedCategoryId={fixedCategoryId1}
-          seeMoreUrl="/all-products"
           className="category-products mb-[60px]"
         />
         <BrandSection
@@ -74,10 +74,8 @@ const groceryHeading = (
           brands={brands}
           categories={categories}
           fixedCategoryId={fixedCategoryId2}
-          // categoryTitle="Electronics"
           sectionTitle={groceryHeading}
-
-          seeMoreUrl="/all-products"
+          seeMoreUrl={`/all-products?category=${encodeURIComponent(categories.find(cat => cat.id === fixedCategoryId2)?.name || "")}`}
           className="category-products mb-[60px]"
         />
         <ProductsAds
