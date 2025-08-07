@@ -1,8 +1,44 @@
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";
 import Layout from "../Partials/Layout";
-
+import { useCart } from "../Contexts/CartContext";
+import { useEffect , useState } from "react";
+import brands from "../../data/brands.json"
+import Lottie from "lottie-react";
+import shoppingcart from "../../assets/lottie/shopping_cart.json";
 export default function CheakoutPage() {
+
+const { cartItems = [], subtotal } = useCart();
+ const [showAnimation, setShowAnimation] = useState(false);
+
+  const handlePaymentClick = () => {
+    setShowAnimation(true);
+
+    // Simulate payment process (e.g., 3s delay)
+    setTimeout(() => {
+      setShowAnimation(false);
+      alert("Payment Successful!"); // Replace with actual payment logic
+    }, 3000);
+  };
+  const [hasGroceryItem, setHasGroceryItem] = useState(false);
+
+useEffect(() => {
+  const groceryCategoryId = "0003";
+
+  console.log("Cart Items:", cartItems);
+
+  const hasGrocery = cartItems.some((product) => {
+    const brand = brands.find(
+      (b) => b.name.toLowerCase() === product.brand?.toLowerCase()
+    );
+    console.log("Checking product:", product.title, "Brand:", brand);
+    return brand?.categoryId === groceryCategoryId;
+  });
+
+  console.log("Has grocery item:", hasGrocery);
+
+  setHasGroceryItem(hasGrocery);
+}, [cartItems]);
   return (
     <Layout childrenClasses="pt-0 pb-0">
       <div className="checkout-page-wrapper w-full bg-white pb-[60px]">
@@ -193,66 +229,33 @@ export default function CheakoutPage() {
                   </div>
                   <div className="product-list w-full mb-[30px]">
                     <ul className="flex flex-col space-y-5">
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h4 className="text-[15px] text-qblack mb-2.5">
-                              Apple Watch
-                              <sup className="text-[13px] text-qgray ml-2 mt-2">
-                                x1
-                              </sup>
-                            </h4>
-                            <p className="text-[13px] text-qgray">
-                              64GB, Black, 44mm, Chain Belt
-                            </p>
-                          </div>
-                          <div>
-                            <span className="text-[15px] text-qblack font-medium">
-                              $38
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h4 className="text-[15px] text-qblack mb-2.5">
-                              Apple Watch
-                              <sup className="text-[13px] text-qgray ml-2 mt-2">
-                                x1
-                              </sup>
-                            </h4>
-                            <p className="text-[13px] text-qgray">
-                              64GB, Black, 44mm, Chain Belt
-                            </p>
-                          </div>
-                          <div>
-                            <span className="text-[15px] text-qblack font-medium">
-                              $38
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div className="flex justify-between items-center">
-                          <div>
-                            <h4 className="text-[15px] text-qblack mb-2.5">
-                              Apple Watch
-                              <sup className="text-[13px] text-qgray ml-2 mt-2">
-                                x1
-                              </sup>
-                            </h4>
-                            <p className="text-[13px] text-qgray">
-                              64GB, Black, 44mm, Chain Belt
-                            </p>
-                          </div>
-                          <div>
-                            <span className="text-[15px] text-qblack font-medium">
-                              $38
-                            </span>
-                          </div>
-                        </div>
-                      </li>
+                      {cartItems.length === 0 ? (
+                        <p className="text-center text-sm text-qgray py-4">Your cart is empty</p>
+                      ) : (
+                        cartItems.map((item) => (
+                          <li>
+                            <div className="flex justify-between items-center">
+                              <div>
+                                <h4 className="text-[15px] text-qblack mb-2.5">
+                                  {item.title}
+                                  <sup className="text-[13px] text-qgray ml-2 mt-2">
+                                    x {item.quantity}
+                                  </sup>
+                                </h4>
+                                <p className="text-[13px] text-qgray">
+                                  64GB, Black, 44mm, Chain Belt
+                                </p>
+                              </div>
+                              <div>
+                                <span className="text-[15px] text-qblack font-medium">
+                                  {item.offer_price}
+                                </span>
+                              </div>
+                            </div>
+                          </li>
+                        ))
+                      )}
+
                     </ul>
                   </div>
                   <div className="w-full h-[1px] bg-[#EDEDED]"></div>
@@ -263,7 +266,7 @@ export default function CheakoutPage() {
                         SUBTOTAL
                       </p>
                       <p className="text-[15px] font-medium text-qblack uppercase">
-                        $365
+                        ${subtotal.toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -290,7 +293,7 @@ export default function CheakoutPage() {
                   <div className="mt-[30px]">
                     <div className=" flex justify-between mb-5">
                       <p className="text-2xl font-medium text-qblack">Total</p>
-                      <p className="text-2xl font-medium text-qred">$365</p>
+                      <p className="text-2xl font-medium text-qred">${subtotal.toFixed(2)}</p>
                     </div>
                   </div>
                   <div className="shipping mt-[30px]">
@@ -317,6 +320,26 @@ export default function CheakoutPage() {
                           Please use your Order ID as the payment reference.
                         </p>
                       </li>
+                      {hasGroceryItem && (
+                        <li className="mb-5">
+                          <div className="flex space-x-2.5 items-center mb-4">
+                            <div className="input-radio">
+                              <input
+                                type="radio"
+                                name="price"
+                                className="accent-pink-500"
+                                id="transfer"
+                              />
+                            </div>
+                            <label
+                              htmlFor="transfer"
+                              className="text-[18px] text-normal text-qblack"
+                            >
+                              Pick up from store
+                            </label>
+                          </div>
+                        </li>
+                      )}
                       <li>
                         <div className="flex space-x-2.5 items-center mb-5">
                           <div className="input-radio">
@@ -355,19 +378,25 @@ export default function CheakoutPage() {
                       </li>
                     </ul>
                   </div>
-                  <a href="#">
-                    <div className="w-full h-[50px] black-btn flex justify-center items-center">
+                  <button  onClick={handlePaymentClick} type="button">
+                    <div className="w-full h-[50px] black-btn flex justify-center items-center px-2">
                       <span className="text-sm font-semibold">
                         Place Order Now
                       </span>
                     </div>
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {showAnimation && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50">
+          <Lottie animationData={shoppingcart} style={{ width: 300, height: 300 }} />
+        </div>
+      )}
     </Layout>
   );
 }

@@ -178,7 +178,7 @@ export default function CardPage({ cart = true }) {
                       <p className="text-[18px] font-medium text-qblack">
                         Total
                       </p>
-                      <p className="text-[18px] font-medium text-qred">${subtotal}</p>
+                      <p className="text-[18px] font-medium text-qred">${subtotal.toFixed(2)}</p>
                     </div>
                   </div>
                   <Link to="/checkout">
