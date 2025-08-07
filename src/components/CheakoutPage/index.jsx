@@ -14,10 +14,10 @@ const { cartItems = [], subtotal } = useCart();
   const handlePaymentClick = () => {
     setShowAnimation(true);
 
-    // Simulate payment process (e.g., 3s delay)
+
     setTimeout(() => {
       setShowAnimation(false);
-      alert("Payment Successful!"); // Replace with actual payment logic
+      alert("Payment Successful!"); 
     }, 3000);
   };
   const [hasGroceryItem, setHasGroceryItem] = useState(false);
