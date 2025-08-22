@@ -177,7 +177,7 @@ export default function Navbar({ className, type }) {
 
                                 {brands.slice(0, menulength).map((brand) => (
                                   <li key={brand.id}>
-                                    <Link to={`/all-products/${brand.name}`}>
+                                    <Link to={`/all-products?brand=${encodeURIComponent(brand.name)}`}>
                                       <span className="text-qgray text-sm font-400 border-b border-transparent 
                        hover:text-qyellow hover:border-qyellow">
                                         {brand.name}

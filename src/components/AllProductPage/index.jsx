@@ -20,19 +20,14 @@ export default function AllProductPage() {
   const brand = params.get("brand");
   const category = params.get("category");
   const searchQuery = params.get("search");
-
   const { products } = productDatas;
-  const didInit = useRef(false);
-
+  
   useEffect(() => {
-    if (!didInit.current) {
-      const initialFilters = { brand: [], category: [] };
-      if (brand) initialFilters.brand.push(brand);
-      if (category) initialFilters.category.push(category);
-      setFilters(initialFilters);
-      didInit.current = true;
-    }
-  }, [brand, category]);
+    const newFilters = { brand: [], category: [] };
+    if (brand) newFilters.brand.push(brand);
+    if (category) newFilters.category.push(category);
+    setFilters(newFilters);
+  }, [brand, category, searchQuery]);
 
   const checkboxHandler = (type, name) => {
     setFilters((prev) => {
