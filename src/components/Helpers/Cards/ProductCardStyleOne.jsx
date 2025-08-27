@@ -6,6 +6,7 @@ import ThinLove from "../icons/ThinLove";
 import { useCart } from "../../Contexts/CartContext";
 import { useWishlist } from "../../Contexts/WishlistContext"
 import { useCompare } from "../../Contexts/AddToCompare";
+import Rating from "../rating";
 
 export default function ProductCardStyleOne({ datas, type }) {
   const available =
@@ -97,11 +98,7 @@ export default function ProductCardStyleOne({ datas, type }) {
           </button>
         </div>
         <div className="reviews flex space-x-[1px] mb-3">
-          {Array.from(Array(datas.review), () => (
-            <span key={datas.review + Math.random()}>
-              <Star />
-            </span>
-          ))}
+         <Rating rating={datas.rating?.rate || 0} />
         </div>
         <Link to={`/single-product/${datas.id}`}>
           <p className="title mb-2 text-[15px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">

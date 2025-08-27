@@ -5,6 +5,7 @@ export default function InputCom({
   placeholder,
   children,
   inputHandler,
+  onChange,
   value,
   inputClasses,
   labelClasses = "text-qgray text-[13px] font-normal",
@@ -23,7 +24,8 @@ export default function InputCom({
         <input
           placeholder={placeholder}
           value={value}
-          onChange={inputHandler}
+          // onChange={inputHandler}
+               onChange={onChange} 
           className={`input-field placeholder:text-sm text-sm px-6 text-dark-gray w-full h-full font-normal bg-white focus:ring-0 focus:outline-none ${
             inputClasses || ""
           }`}

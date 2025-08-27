@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Compair from "../icons/Compair";
 import QuickViewIco from "../icons/QuickViewIco";
 import Star from "../icons/Star";
+import Rating from "../rating";
 import ThinLove from "../icons/ThinLove";
 import { useCart } from "../../Contexts/CartContext";
 import { useCompare } from "../../Contexts/AddToCompare";
@@ -36,11 +37,7 @@ export default function ProductCardRowStyleTwo({ className, datas, type }) {
           <div>
             {/* reviews */}
             <div className="flex space-x-1 mb-3">
-              {Array.from(Array(datas.review), () => (
-                <span key={datas.review + Math.random()}>
-                  <Star />
-                </span>
-              ))}
+             <Rating rating={datas.rating?.rate || 0} />
             </div>
             <Link to="/single-product">
               <p className="title mb-2 sm:text-[15px] text-[13px] font-600 text-qblack leading-[24px] line-clamp-2 hover:text-blue-600">

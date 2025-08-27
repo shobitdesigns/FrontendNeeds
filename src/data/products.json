@@ -5,48 +5,66 @@
       "image": "product-img-1.jpg",
       "brand": "oneplus",
       "review": 3,
-      "title": "Xoggle aute et pariatur adipisicing nostrud et excepteur",
+      "title": "dummy product -1 ",
       "offer_price": "$18.73",
       "price": "$27.27",
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": null,
-      "is_sale" : 1,
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      },
+      "is_sale": 1,
       "upto_sale": "2023-03-04 4:00:00",
-     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
+      "related_images": [
+        "product-img-1.jpg",
+        "product-img-2.jpg",
+        "product-img-3.jpg"
+      ]
     },
     {
       "id": "62aefe9a17780a9e549646c2",
       "image": "product-img-2.jpg",
       "brand": "oneplus",
       "review": 5,
-      "title": "Geeky ipsum esse repreh est consequat",
+      "title": "dummy product -2 ",
       "offer_price": "$17.79",
       "price": "$24.55",
+      "rating": {
+        "rate": 4.1,
+        "count": 20
+      },
       "campaingn_product": true,
       "cam_product_available": 20,
       "cam_product_sale": 10,
       "product_type": null,
-        "is_sale" : 1,
-     "related_images": [ "product-img-2.jpg"]
-
+      "is_sale": 1,
+      "related_images": [
+        "product-img-2.jpg"
+      ]
     },
     {
       "id": "62aefe9af9a0e865ee49c99e",
       "image": "product-img-3.jpg",
       "brand": "tensent",
       "review": 5,
-      "title": "Conjurica ea magna eiusmod esse cupt anim aliquip",
+      "title": "dummy product -3 ",
       "offer_price": "$18.03",
+      "rating": {
+        "rate": 4.0,
+        "count": 10
+      },
       "price": "$32.63",
       "campaingn_product": false,
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "popular",
-        "is_sale" : 1,
-     "related_images": [ "product-img-3.jpg"]
-
+      "is_sale": 1,
+      "related_images": [
+        "product-img-3.jpg"
+      ]
     },
     {
       "id": "62aefe9a6e662e77accd4cc4",
@@ -60,7 +78,13 @@
       "cam_product_available": 48,
       "cam_product_sale": 12,
       "product_type": null,
-     "related_images": [ "product-img-4.jpg"]
+      "related_images": [
+        "product-img-4.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9a9e1c4b69e47fa40f",
@@ -74,7 +98,13 @@
       "cam_product_available": 12,
       "cam_product_sale": 8,
       "product_type": null,
-     "related_images": ["product-img-5.jpg" ]
+      "related_images": [
+        "product-img-5.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9aa96283a41a9b46fc",
@@ -88,7 +118,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": null,
-     "related_images": ["product-img-6.jpg"]
+      "related_images": [
+        "product-img-6.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9aa2577bc8fa4ea7bc",
@@ -102,7 +138,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "new",
-     "related_images": ["product-img-7.jpg"]
+      "related_images": [
+        "product-img-7.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9aa117932437d0da93",
@@ -116,7 +158,13 @@
       "cam_product_available": 19,
       "cam_product_sale": 10,
       "product_type": "new",
-     "related_images": ["product-img-8.jpg"]
+      "related_images": [
+        "product-img-8.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9a93cc2c0e16ddb207",
@@ -130,7 +178,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "new",
-     "related_images": ["product-img-9.jpg"]
+      "related_images": [
+        "product-img-9.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9a39099843b144dc3a",
@@ -144,7 +198,13 @@
       "cam_product_available": 19,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-10.jpg"]
+      "related_images": [
+        "product-img-10.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9af9a0e865ee49c999999e",
@@ -158,7 +218,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "popular",
-     "related_images": ["product-img-1.jpg"]
+      "related_images": [
+        "product-img-1.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9a9a52d2ee3301918a",
@@ -172,7 +238,13 @@
       "cam_product_available": 25,
       "cam_product_sale": 10,
       "product_type": "new",
-     "related_images": [ "product-img-2.jpg"]
+      "related_images": [
+        "product-img-2.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9ad1e0cfc12838c3c4",
@@ -186,7 +258,13 @@
       "cam_product_available": 16,
       "cam_product_sale": 9,
       "product_type": null,
-     "related_images": [ "product-img-3.jpg"]
+      "related_images": [
+        "product-img-3.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9a05ca1ea50003e072",
@@ -200,7 +278,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": null,
-     "related_images": ["product-img-4.jpg"]
+      "related_images": [
+        "product-img-4.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9a369487a7db38e327",
@@ -214,7 +298,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": null,
-     "related_images": ["product-img-5.jpg"]
+      "related_images": [
+        "product-img-5.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9ab5a58ec7eba5e003",
@@ -228,7 +318,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "popular",
-     "related_images": ["product-img-16.jpg"]
+      "related_images": [
+        "product-img-16.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9acd2d5e4c13d5937c",
@@ -242,7 +338,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "new",
-     "related_images": ["product-img-17.jpg"]
+      "related_images": [
+        "product-img-17.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9aa06338a7636fde5c",
@@ -256,7 +358,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "popular",
-     "related_images": ["product-img-18.jpg"]
+      "related_images": [
+        "product-img-18.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9ac47bcd0a2ea95630",
@@ -270,7 +378,13 @@
       "cam_product_available": 10,
       "cam_product_sale": 8,
       "product_type": "new",
-     "related_images": ["product-img-19.jpg"]
+      "related_images": [
+        "product-img-19.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9ae487b5c3e1fff5ae",
@@ -284,7 +398,13 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-20.jpg"]
+      "related_images": [
+        "product-img-20.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9acd2d5e4c13d5937cfagaga",
@@ -298,7 +418,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "new",
-     "related_images": ["product-img-21.jpg"]
+      "related_images": [
+        "product-img-21.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9aa06338a7fweq636fde5c",
@@ -312,7 +438,13 @@
       "cam_product_available": null,
       "cam_product_sale": null,
       "product_type": "popular",
-     "related_images": ["product-img-22.jpg"]
+      "related_images": [
+        "product-img-22.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefegfasgaqgqeghub9ac47bcd0a2ea95630",
@@ -326,7 +458,13 @@
       "cam_product_available": 10,
       "cam_product_sale": 8,
       "product_type": null,
-     "related_images": ["product-img-23.jpg"]
+      "related_images": [
+        "product-img-23.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9ae487b5c3efqwredgaefafa1fff5ae",
@@ -340,7 +478,13 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": "new",
-     "related_images": ["product-img-24.jpg"]
+      "related_images": [
+        "product-img-24.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefe9ae4fasgboihpnokmokm87b5c3efqwredgaefafa1fff5ae",
@@ -354,7 +498,13 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-25.jpg"]
+      "related_images": [
+        "product-img-25.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "fafafsare62aefe9ae487b5c3efqwredgaefafa1fff5ae",
@@ -368,7 +518,15 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
+      "related_images": [
+        "product-img-1.jpg",
+        "product-img-2.jpg",
+        "product-img-3.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefea9ae4a87b5c3effqwreadgaefafa1ffaff5ae",
@@ -382,7 +540,15 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
+      "related_images": [
+        "product-img-1.jpg",
+        "product-img-2.jpg",
+        "product-img-3.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
     {
       "id": "62aefea9ae4a87b5c3esswsssssffqwreadgaefafa1ffaff5ae",
@@ -396,9 +562,17 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-1.jpg", "product-img-2.jpg", "product-img-3.jpg"]
+      "related_images": [
+        "product-img-1.jpg",
+        "product-img-2.jpg",
+        "product-img-3.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     },
-        {
+    {
       "id": "10",
       "image": "product-img-29.png",
       "brand": "Dabur",
@@ -410,13 +584,18 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-29.jpg"]
-    }
-    ,
-        {
+      "related_images": [
+        "product-img-29.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
+    },
+    {
       "id": "11",
       "image": "product-img-30.png",
-     "brand": "Dabur",
+      "brand": "Dabur",
       "review": 5,
       "title": "Callflex dolore eiusmod voluptate proident aute incididunt anim",
       "offer_price": "$18.74",
@@ -425,13 +604,18 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-30.jpg"]
-    }
-    ,
-        {
+      "related_images": [
+        "product-img-30.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
+    },
+    {
       "id": "12",
       "image": "product-img-31.png",
-     "brand": "Dabur",
+      "brand": "Dabur",
       "review": 5,
       "title": "Callflex dolore eiusmod voluptate proident aute incididunt anim",
       "offer_price": "$18.74",
@@ -440,7 +624,17 @@
       "cam_product_available": 18,
       "cam_product_sale": 10,
       "product_type": null,
-     "related_images": ["product-img-31.jpg"]
+      "related_images": [
+        "product-img-31.jpg"
+      ],
+      "rating": {
+        "rate": 4.8,
+        "count": 10
+      }
     }
-  ]
+  ],
+  "rating": {
+    "rate": 4.8,
+    "count": 10
+  }
 }
