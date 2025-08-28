@@ -1,13 +1,40 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import InputCom from "../../Helpers/InputCom";
 import Layout from "../../Partials/Layout";
 import Thumbnail from "./Thumbnail";
 import { Link } from "react-router-dom";
-
+import { useAuth } from "../../Contexts/AuthContext";
 export default function Login() {
   const [checked, setValue] = useState(false);
   const rememberMe = () => {
     setValue(!checked);
+  };
+  const { login } = useAuth();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    let newErrors = {};
+
+    if (!email.trim()) {
+      newErrors.email = "Please enter your email";
+    }
+    if (!password.trim()) {
+      newErrors.password = "Please enter your password";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    login(email, password);
+      navigate("/profile");
   };
   return (
     <Layout childrenClasses="pt-0 pb-0">
@@ -35,6 +62,7 @@ export default function Login() {
                     </svg>
                   </div>
                 </div>
+             <form onSubmit={handleLogin}>
                 <div className="input-area">
                   <div className="input-item mb-5">
                     <InputCom
@@ -42,8 +70,11 @@ export default function Login() {
                       label="Email Address*"
                       name="email"
                       type="email"
-                      inputClasses="h-[50px]"
+                      inputClasses="h-[50px] py-3"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
+                        {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                   </div>
                   <div className="input-item mb-5">
                     <InputCom
@@ -51,8 +82,11 @@ export default function Login() {
                       label="Password*"
                       name="password"
                       type="password"
-                      inputClasses="h-[50px]"
-                    />
+                      inputClasses="h-[50px] py-3"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      />
+                      {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
                   </div>
                   <div className="forgot-password-area flex justify-between items-center mb-7">
                     <div className="remember-checkbox flex items-center space-x-2.5">
@@ -93,7 +127,7 @@ export default function Login() {
                   <div className="signin-area mb-3.5">
                     <div className="flex justify-center">
                       <button
-                        type="button"
+                        type="submit"
                         className="black-btn mb-6 text-sm text-white w-full h-[50px] font-semibold flex justify-center bg-purple items-center"
                       >
                         <span>Log In</span>
@@ -162,6 +196,7 @@ export default function Login() {
                     </p>
                   </div>
                 </div>
+                </form>
               </div>
             </div>
             <div className="flex-1 lg:flex hidden transform scale-60 xl:scale-100   xl:justify-center ">

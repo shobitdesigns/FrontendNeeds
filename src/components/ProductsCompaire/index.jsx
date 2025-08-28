@@ -1,6 +1,3 @@
-
-
-import Star from "../Helpers/icons/Star";
 import { useState, useEffect } from "react";
 import InputCom from "../Helpers/InputCom";
 import PageTitle from "../Helpers/PageTitle";

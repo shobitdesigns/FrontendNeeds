@@ -10,13 +10,14 @@ import { registerSW } from "virtual:pwa-register";
 import { CartProvider } from "./components/Contexts/CartContext";
 import { CompareProvider } from "./components/Contexts/AddToCompare";
 import { WishlistProvider } from "./components/Contexts/WishlistContext";
+import { AuthProvider } from "./components/Contexts/AuthContext";
 if (import.meta.env.MODE === "production") {
   registerSW();
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-
+    <AuthProvider>
     <CartProvider>
       <CompareProvider>
       <WishlistProvider>
@@ -24,6 +25,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </WishlistProvider>
       </CompareProvider>
     </CartProvider>
+    </AuthProvider>
   </React.StrictMode>
 );
 

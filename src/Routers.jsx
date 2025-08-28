@@ -23,7 +23,7 @@ import TermsCondition from "./components/TermsCondition/index";
 import TrackingOrder from "./components/TrackingOrder";
 import Wishlist from "./components/Wishlist";
 import ScrollToTopLayout from "./components/Customs/ScrollToTop.jsx";
-
+import PrivateRoute from "./PrivateRoute.jsx";
 const router = createBrowserRouter([
    {
 path: "/",
@@ -32,9 +32,9 @@ path: "/",
   { path: "/", element: <Home /> },
   { path: "/all-products", element: <AllProductPage /> },
   { path: "/single-product/:id", element: <SingleProductPage /> },
-  { path: "/cart", element: <CardPage /> },
+  { path: "/cart", element: ( <PrivateRoute><CardPage /> </PrivateRoute>)  },
   { path: "/checkout", element: <CheakoutPage /> },
-  { path: "/wishlist", element: <Wishlist /> },
+  { path: "/wishlist", element: ( <PrivateRoute><Wishlist /></PrivateRoute>) },
   { path: "/flash-sale", element: <FlashSale /> },
   { path: "/saller-page", element: <SallerPage /> },
   { path: "/products-compaire", element: <ProductsCompaire /> },
@@ -47,7 +47,7 @@ path: "/",
   { path: "/faq", element: <Faq /> },
   { path: "/login", element: <Login /> },
   { path: "/signup", element: <Signup /> },
-  { path: "/profile", element: <Profile /> },
+  { path: "/profile", element: ( <PrivateRoute><Profile /> </PrivateRoute>) },
   { path: "/become-saller", element: <BecomeSaller /> },
   { path: "/privacy-policy", element: <PrivacyPolicy /> },
   { path: "/terms-condition", element: <TermsCondition /> },
