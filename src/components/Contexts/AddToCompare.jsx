@@ -1,4 +1,3 @@
-// context/CompareContext.js
 import { createContext, useContext, useState } from "react";
 
 const CompareContext = createContext();
@@ -6,15 +5,29 @@ const CompareContext = createContext();
 export const CompareProvider = ({ children }) => {
   const [compareList, setCompareList] = useState([]);
 
-  const addToCompare = (product) => {
-    const exists = compareList.find((item) => item.id === product.id);
-    if (!exists) {
-      setCompareList([...compareList, product]);
-    }
+
+
+  const addToCompare = (product, index = null) => {
+    setCompareList((prev) => {
+      const newList = [...prev];
+
+      if (index !== null) {
+        newList[index] = product;
+      } else {
+        const exists = newList.find((item) => item.id === product.id);
+        if (!exists) {
+          if (newList.length < 4) {
+            newList.push(product);
+          }
+        }
+      }
+
+      return newList;
+    });
   };
 
   const removeFromCompare = (id) => {
-    setCompareList(compareList.filter((item) => item.id !== id));
+    setCompareList((prev) => prev.filter((item) => item.id !== id));
   };
 
   const isInCompare = (id) => {

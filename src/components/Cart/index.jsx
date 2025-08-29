@@ -62,6 +62,8 @@ export default function Cart({ className, type }) {
 </ul>
 
           </div>
+             {cartItems.length > 0 && (
+          <>
           <div className="w-full px-4 mt-[20px] mb-[12px]">
             <div className="h-[1px] bg-[#F0F1F3]"></div>
           </div>
@@ -93,6 +95,8 @@ export default function Cart({ className, type }) {
               Get Return within <span className="text-qblack">30 days</span>
             </p>
           </div>
+          </>
+             )}
         </div>
       </div>
     </>

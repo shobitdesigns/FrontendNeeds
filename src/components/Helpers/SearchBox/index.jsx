@@ -61,6 +61,12 @@ const handleSelect = (item) => {
           scrollbar-width: thin;
           scrollbar-color: #c0c0c0 #f1f1f1;
         }
+        .search-btn {
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    background-color: rgb(255 187 56 / var(--tw-bg-opacity));
+    color: rgb(34 34 34 / var(--tw-text-opacity));
+}
       `}</style>
       <div
         className={`relative w-full h-full flex items-center border border-qgray-border bg-white ${className || ""
@@ -127,7 +133,7 @@ const handleSelect = (item) => {
         <div className="w-[1px] h-[22px] bg-qgray-border"></div>
 
         <button
-          className={`w-[93px] h-full text-sm font-600 bg-yellow search-btn `}
+          className=" w-[93px] h-full text-sm font-600  search-btn "
           type="button"
            onClick={() => {
     if (query.trim()) {

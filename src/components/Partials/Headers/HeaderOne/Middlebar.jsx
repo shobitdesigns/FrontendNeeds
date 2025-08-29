@@ -5,16 +5,18 @@ import ThinLove from "../../../Helpers/icons/ThinLove";
 import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useCart } from "../../../Contexts/CartContext";
 import { useWishlist } from "../../../Contexts/WishlistContext";
 import { useCompare } from "../../../Contexts/AddToCompare";
+import { toast } from "sonner";
 export default function Middlebar({ className, type }) {
   const { cartItems } = useCart();
   const { wishlist } = useWishlist();
   const { compareList } = useCompare();
   const [isFixed, setIsFixed] = useState(false);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
       setIsFixed(window.scrollY > 0); // You can adjust 100 as needed
@@ -23,6 +25,18 @@ export default function Middlebar({ className, type }) {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+const handleCompareClick = (e) => {
+  e.preventDefault();
+  if (compareList.length > 0) {
+    navigate("/products-compaire");
+  } else {
+    toast.info("Add at least one product to compare."); 
+  }
+};
+
+
+
   return (
     <div className={`${isFixed ? "fixed top-0 z-50" : ""} w-full h-[86px] bg-white ${className} `}>
       <div className="container-x mx-auto h-full">
@@ -47,7 +61,7 @@ export default function Middlebar({ className, type }) {
             <div className="flex space-x-6 items-center">
               <div className="compaire relative">
                 <Link to="/products-compaire">
-                  <span>
+                  <span onClick={handleCompareClick}>
                     <Compair />
                   </span>
                 </Link>
@@ -92,8 +106,7 @@ export default function Middlebar({ className, type }) {
                     </span>
                   )}
                 </div>
-                {/* <div className="fixed left-0 top-0 w-full h-full z-40"></div> */}
-                {/* hidden group-hover:block" */}
+        
                 <Cart
                   type={type}
                   className="absolute -right-[45px] top-11 z-50 hidden group-hover:block"
